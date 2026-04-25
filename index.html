@@ -1,0 +1,1532 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>SD portfolio</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial:wght@400&display=swap" rel="stylesheet">
+    
+  <!-- Vendor CSS Files -->
+   <link rel="stylesheet" href="bootstrap.css">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    .header-1{
+      
+      text-align: center;
+    }
+    #image-s{
+    
+      height: 500px;
+      width: 600px;
+    }
+    #ss{
+      width: 600px;
+      height: 500px;
+    }
+    .hero-section{
+      background: linear-gradient(125deg, #020818 0%, #0a0a2e 30%, #0d1b4b 60%, #050d1a 100%);
+      color: white;
+      padding: 80px 0;
+      position: relative;
+    }
+    
+    /* Dark/Light Mode Toggle */
+    .theme-toggle {
+      position: fixed;
+      top: 100px;
+      right: 30px;
+      z-index: 1000;
+      background: var(--accent-color);
+      color: white;
+      border: none;
+      padding: 12px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+    }
+    
+    .theme-toggle:hover {
+      transform: scale(1.1) rotate(180deg);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+    
+    /* Dark Mode Styles */
+    body.dark-mode {
+      --background-color: #1a1a2e;
+      --default-color: #eaeaea;
+      --heading-color: #ffffff;
+      --surface-color: #16213e;
+      --accent-color: #667eea;
+    }
+    
+    body.dark-mode .hero-section {
+      background: linear-gradient(125deg, #020818 0%, #0a0a2e 30%, #0d1b4b 60%, #050d1a 100%);
+    }
+    
+    
+    /* Animated Counters */
+    .counter-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 60px 0;
+      color: white;
+      margin: 50px 0;
+    }
+    
+    .counter-item {
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .counter-number {
+      font-size: 48px;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    .counter-label {
+      font-size: 18px;
+      opacity: 0.9;
+    }
+    
+    /* Typing Effect */
+    .typing-text {
+      border-right: 3px solid white;
+      animation: blink 0.7s infinite;
+    }
+    
+    @keyframes blink {
+      0%, 50% { border-color: white; }
+      51%, 100% { border-color: transparent; }
+    }
+    
+    /* Enhanced Cards */
+    .premium-card {
+      background: var(--surface-color);
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .premium-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    
+    /* CTA Buttons */
+    .cta-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 15px 40px;
+      border-radius: 50px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    }
+    
+    .cta-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+    }
+    
+    .cta-secondary {
+      background: transparent;
+      color: var(--accent-color);
+      padding: 15px 40px;
+      border-radius: 50px;
+      border: 2px solid var(--accent-color);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .cta-secondary:hover {
+      background: var(--accent-color);
+      color: white;
+      transform: translateY(-3px);
+    }
+    
+    /* Skills Progress Bars */
+    .skill-progress {
+      background: #e0e0e0;
+      border-radius: 10px;
+      height: 10px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+    
+    .skill-progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      border-radius: 10px;
+      transition: width 1.5s ease;
+      width: 0;
+    }
+    
+    .skill-progress-bar.animate {
+      width: var(--progress-width);
+    }
+    
+    /* Project Filter Buttons */
+    .filter-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+      padding: 10px 25px;
+      border-radius: 25px;
+      border: 2px solid var(--accent-color);
+      background: transparent;
+      color: var(--accent-color);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+    
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--accent-color);
+      color: white;
+    }
+    
+    /* Star Rating */
+    .star-rating {
+      color: #ffd700;
+      font-size: 20px;
+      margin: 10px 0;
+    }
+    
+    /* Enhanced Navigation */
+    .header.sticky-top {
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.95);
+    }
+    
+    body.dark-mode .header.sticky-top {
+      background: rgba(26,26,46,0.95);
+    }
+    
+    /* Scroll offset for fixed header */
+    section {
+      scroll-margin-top: 80px;
+    }
+    
+    #hero {
+      scroll-margin-top: 0;
+    }
+    
+    /* Smooth Animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Premium Typography */
+    h1, h2, h3 {
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    
+    .hero-title {
+      font-size: 56px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+      font-size: 24px;
+      font-weight: 300;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+    
+    /* Ensure main content is visible */
+    .main {
+      position: relative;
+      z-index: 1;
+      background: var(--background-color);
+    }
+    
+    /* Fix section visibility */
+    section {
+      position: relative;
+      background: var(--background-color);
+    }
+    
+  </style>
+  
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.webp" alt=""> -->
+        <h1 class="sitename">MyFolio</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact" class="nav-contact-btn">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <div class="header-social-links">
+        <a href="https://www.facebook.com/seynadereje12" target="_blank" class="facebook" title="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.linkedin.com/in/seynadereje12" target="_blank" class="linkedin" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="https://www.instagram.com/explore/search/?q=0980435680" target="_blank" class="instagram" title="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://t.me/+251980435680" target="_blank" class="telegram" title="Telegram"><i class="bi bi-telegram"></i></a>
+      </div>
+
+    </div>
+  </header>
+  
+  <!-- Theme Toggle Button -->
+  <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
+    <i class="bi bi-moon-stars-fill"></i>
+  </button>
+  
+  <!-- ======= Hero Slider Section ======= -->
+  <section class="hero-section" id="hero">
+
+    <!-- Premium dark background layers -->
+    <div class="hero-bg">
+      <div class="hero-blob hero-blob-1"></div>
+      <div class="hero-blob hero-blob-2"></div>
+      <div class="hero-blob hero-blob-3"></div>
+      <div class="hero-blob hero-blob-4"></div>
+      <div class="hero-grid"></div>
+      <canvas id="heroParticles"></canvas>
+    </div>
+
+    <!-- ===== SLIDER WRAPPER ===== -->
+    <div class="hs-slider" id="heroSlider">
+
+      <!-- ── SLIDE 1 (current home, kept exactly) ── -->
+      <div class="hs-slide active" data-slide="0">
+        <div class="container hero-container">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6 hero-text-col">
+              <div class="hero-badge"><span class="hero-badge-dot"></span>Available for Work</div>
+              <h1 class="hero-title"><span style="color:#ffffff;font-weight:900;font-size:1.1em;text-shadow:0 0 30px rgba(102,126,234,0.8),0 0 60px rgba(180,80,255,0.4);letter-spacing:-1px;">Hi, I'm a</span><br><span class="hero-gradient-text">Frontend Developer</span></h1>
+              <p class="hero-subtitle">Crafting Beautiful &amp; Interactive User Experiences</p>
+              <p class="hero-desc">I specialize in creating modern, responsive, and user-friendly web interfaces using HTML5, CSS3, JavaScript, and React. From wireframes to live deployment — focused on performance, usability, and clean code.</p>
+              <div class="hero-tech-pills">
+                <span class="hero-pill"><i class="bi bi-filetype-html"></i> HTML5</span>
+                <span class="hero-pill"><i class="bi bi-filetype-css"></i> CSS3</span>
+                <span class="hero-pill"><i class="bi bi-filetype-js"></i> JavaScript</span>
+                <span class="hero-pill"><i class="bi bi-code-slash"></i> React</span>
+              </div>
+              <div class="hero-actions">
+                <a href="#portfolio" class="hero-btn-primary">View My Work <i class="bi bi-arrow-right"></i></a>
+                <a href="#contact" class="hero-btn-secondary">Contact Me</a>
+              </div>
+              <div class="hero-stats">
+                <div class="hero-stat"><span class="hero-stat-num">2+</span><span class="hero-stat-label">Years Exp.</span></div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat"><span class="hero-stat-num">20+</span><span class="hero-stat-label">Projects</span></div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat"><span class="hero-stat-num">10+</span><span class="hero-stat-label">Clients</span></div>
+              </div>
+            </div>
+            <div class="col-lg-6 hero-img-col">
+              <div class="hero-img-grid">
+                <div class="hero-glass-frame">
+                  <div class="hero-glass-header">
+                    <span class="hero-glass-dot red"></span>
+                    <span class="hero-glass-dot yellow"></span>
+                    <span class="hero-glass-dot green"></span>
+                    <span class="hero-glass-title">portfolio.dev</span>
+                  </div>
+                  <div class="hero-img-main">
+                    <img src="seyaman.jpg" alt="Seid Dereje - Frontend Developer">
+                    <div class="hero-img-ring"></div>
+                    <div class="hero-img-badge"><i class="bi bi-code-slash"></i><span>Frontend Dev</span></div>
+                  </div>
+                </div>
+                <div class="hero-img-side">
+                  <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=90" alt="Coding">
+                </div>
+                <div class="hero-float-badge hero-float-1"><i class="bi bi-star-fill"></i> Top Rated</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SLIDE 2: Seya Dereje — Frontend Developer (dual layout) ── -->
+      <div class="hs-slide" data-slide="1">
+        <div class="hs-slide-bg" style="background:
+          radial-gradient(ellipse at 10% 20%, rgba(6,182,212,0.28) 0%, transparent 45%),
+          radial-gradient(ellipse at 90% 80%, rgba(102,126,234,0.28) 0%, transparent 45%),
+          radial-gradient(ellipse at 50% 50%, rgba(180,80,255,0.12) 0%, transparent 60%),
+          radial-gradient(ellipse at 80% 10%, rgba(255,110,180,0.12) 0%, transparent 40%),
+          linear-gradient(145deg, #020818 0%, #040f2a 30%, #060820 60%, #010510 100%)">
+        </div>
+        <div class="container hero-container">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6 hero-text-col">
+              <div class="hero-badge" style="border-color:rgba(6,182,212,.4);color:#06b6d4"><span class="hero-badge-dot" style="background:#06b6d4"></span>Available for Work</div>
+              <h1 class="hero-title"><span style="background:linear-gradient(90deg,#ff9f32,#ff6eb4,#c850c0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:800;">Hi, I'm</span><br><span style="background:linear-gradient(90deg,#06b6d4,#667eea);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Seya Dereje</span></h1>
+              <p class="hero-subtitle">Frontend Developer &amp; Visual Architect</p>
+              <p class="hero-desc">I transform ideas into elegant, high-performance web experiences. With a sharp eye for design and a passion for clean code, I build interfaces that captivate users and elevate brands globally.</p>
+              <div class="hero-tech-pills">
+                <span class="hero-pill"><i class="bi bi-filetype-html"></i> HTML5</span>
+                <span class="hero-pill"><i class="bi bi-filetype-css"></i> CSS3</span>
+                <span class="hero-pill"><i class="bi bi-filetype-js"></i> JavaScript</span>
+                <span class="hero-pill"><i class="bi bi-code-slash"></i> React</span>
+              </div>
+              <div class="hero-actions">
+                <a href="#portfolio" class="hero-btn-primary" style="background:linear-gradient(135deg,#06b6d4,#667eea)">My Work <i class="bi bi-arrow-right"></i></a>
+                <a href="#contact" class="hero-btn-secondary">Contact</a>
+              </div>
+              <div class="hero-stats">
+                <div class="hero-stat"><span class="hero-stat-num">2+</span><span class="hero-stat-label">Years Exp.</span></div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat"><span class="hero-stat-num">18+</span><span class="hero-stat-label">Projects</span></div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat"><span class="hero-stat-num">8+</span><span class="hero-stat-label">Clients</span></div>
+              </div>
+            </div>
+            <div class="col-lg-6 hero-img-col">
+              <div class="hs-dual-img">
+                <div class="hs-img-primary">
+                  <img src="abuzubeir.jpg" alt="Seya Dereje - Frontend Developer">
+                  <div class="hs-img-overlay"><span><i class="bi bi-stars"></i> Visual Architect</span></div>
+                </div>
+                <div class="hs-img-secondary">
+                  <img src="image download.png" alt="Software">
+                  <div class="hs-img-overlay"><span><i class="bi bi-code-slash"></i> Software</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SLIDE 3: Seya — Frontend Developer ── -->
+      <div class="hs-slide" data-slide="2">
+        <div class="hs-slide-bg" style="background: linear-gradient(135deg,#001a0f 0%,#003320 40%,#001a10 70%,#000a05 100%)"></div>
+        <div class="container hero-container">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6 hero-text-col">
+              <div class="hero-badge" style="border-color:rgba(16,185,129,.4);color:#10b981"><span class="hero-badge-dot" style="background:#10b981"></span>Available Now</div>
+              <h1 class="hero-title"><span style="background:linear-gradient(90deg,#ff9f32,#ff6eb4,#c850c0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:800;">Creative</span><br><span style="background:linear-gradient(90deg,#10b981,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Frontend Dev</span></h1>
+              <p class="hero-subtitle">Building Beautiful, Responsive Web Interfaces</p>
+              <p class="hero-desc">Crafting pixel-perfect, high-performance frontend experiences using modern frameworks and clean code. Every interface I build is fast, accessible, and delightful to use.</p>
+              <div class="hero-tech-pills">
+                <span class="hero-pill"><i class="bi bi-filetype-html"></i> HTML5</span>
+                <span class="hero-pill"><i class="bi bi-filetype-css"></i> CSS3</span>
+                <span class="hero-pill"><i class="bi bi-code-slash"></i> React</span>
+                <span class="hero-pill"><i class="bi bi-bootstrap"></i> Bootstrap</span>
+              </div>
+              <div class="hero-actions">
+                <a href="#portfolio" class="hero-btn-primary" style="background:linear-gradient(135deg,#10b981,#06b6d4)">View Projects <i class="bi bi-arrow-right"></i></a>
+                <a href="#contact" class="hero-btn-secondary">Let's Talk</a>
+              </div>
+              <div class="hero-stats">
+                <div class="hero-stat"><span class="hero-stat-num">2+</span><span class="hero-stat-label">Years Exp.</span></div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat"><span class="hero-stat-num">20+</span><span class="hero-stat-label">Projects</span></div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat"><span class="hero-stat-num">10+</span><span class="hero-stat-label">Clients</span></div>
+              </div>
+            </div>
+            <div class="col-lg-6 hero-img-col">
+              <div class="hs-single-img">
+                <img src="seya photo (122).jpg" alt="Seya - Frontend Developer">
+                <div class="hs-img-overlay"><span><i class="bi bi-code-slash"></i> Frontend Developer</span></div>
+                <div class="hs-img-glow" style="background:radial-gradient(circle,rgba(16,185,129,0.3),transparent 70%)"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SLIDE 4: Abu Faruk — UI/UX Designer (solo) ── -->
+      <div class="hs-slide" data-slide="3">
+        <div class="hs-slide-bg" style="background: linear-gradient(135deg,#0a001f 0%,#1a0040 40%,#0d0030 70%,#050010 100%)"></div>
+        <div class="container hero-container">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6 hero-text-col">
+              <div class="hero-badge" style="border-color:rgba(255,160,50,.4);color:#ff9f32"><span class="hero-badge-dot" style="background:#ff9f32"></span>Open to Projects</div>
+              <h1 class="hero-title"><span style="color:#ffffff;font-weight:900;font-size:1.1em;text-shadow:0 0 30px rgba(255,160,50,0.8),0 0 60px rgba(255,110,180,0.4);letter-spacing:-1px;">Hi, I'm</span><br><span style="background:linear-gradient(90deg,#ff9f32,#ff6eb4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Abu Faruk</span></h1>
+              <p class="hero-subtitle">UI/UX Designer &amp; Creative Developer</p>
+              <p class="hero-desc">Designing intuitive, pixel-perfect interfaces that delight users. I blend creativity with technical precision to build experiences that are both beautiful and functional across all platforms.</p>
+              <div class="hero-tech-pills">
+                <span class="hero-pill"><i class="bi bi-pen"></i> Figma</span>
+                <span class="hero-pill"><i class="bi bi-palette"></i> Adobe XD</span>
+                <span class="hero-pill"><i class="bi bi-phone"></i> Mobile UI</span>
+                <span class="hero-pill"><i class="bi bi-grid"></i> Design Systems</span>
+              </div>
+              <div class="hero-actions">
+                <a href="#portfolio" class="hero-btn-primary" style="background:linear-gradient(135deg,#ff9f32,#ff6eb4)">See My Designs <i class="bi bi-arrow-right"></i></a>
+                <a href="#contact" class="hero-btn-secondary">Hire Me</a>
+              </div>
+              <div class="hero-stats">
+                <div class="hero-stat"><span class="hero-stat-num">3+</span><span class="hero-stat-label">Years Exp.</span></div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat"><span class="hero-stat-num">30+</span><span class="hero-stat-label">Designs</span></div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat"><span class="hero-stat-num">15+</span><span class="hero-stat-label">Clients</span></div>
+              </div>
+            </div>
+            <div class="col-lg-6 hero-img-col">
+              <div class="hs-single-img">
+                <img src="abu faruk.jpg" alt="Abu Faruk - UI/UX Designer">
+                <div class="hs-img-overlay"><span><i class="bi bi-pen"></i> UI/UX Designer</span></div>
+                <div class="hs-img-glow" style="background:radial-gradient(circle,rgba(255,160,50,0.3),transparent 70%)"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /hs-slider -->
+
+    <!-- Slider dots -->
+    <div class="hs-dots">
+      <button class="hs-dot active" data-dot="0"></button>
+      <button class="hs-dot" data-dot="1"></button>
+      <button class="hs-dot" data-dot="2"></button>
+      <button class="hs-dot" data-dot="3"></button>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="hs-progress"><div class="hs-progress-bar" id="hsProgressBar"></div></div>
+
+  </section>
+
+  <!-- Wavy Divider: Hero → About -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="waveGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"   stop-color="#667eea"/>
+          <stop offset="33%"  stop-color="#b450ff"/>
+          <stop offset="66%"  stop-color="#ff6eb4"/>
+          <stop offset="100%" stop-color="#ff9f32"/>
+          <animateTransform attributeName="gradientTransform" type="translate" from="-1 0" to="1 0" dur="3s" repeatCount="indefinite"/>
+        </linearGradient>
+      </defs>
+      <path class="wave-path" d="M0,50 C180,100 360,0 540,50 C720,100 900,0 1080,50 C1260,100 1380,15 1440,50" fill="none" stroke="url(#waveGrad1)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <main class="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about-section section">
+
+      <!-- Decorative background -->
+      <div class="about-bg">
+        <div class="about-blob-1"></div>
+        <div class="about-blob-2"></div>
+        <div class="about-blob-3"></div>
+      </div>
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About</h2>
+        <div class="title-shape">
+          <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 0,10 C 40,0 60,20 100,10 C 140,0 160,20 200,10" fill="none" stroke="#e07b39" stroke-width="2"></path>
+          </svg>
+        </div>
+        <p>Passionate about crafting seamless and engaging web experiences that combine functionality with aesthetic design.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="50">
+        <div class="row align-items-center g-5">
+
+          <!-- Image Column -->
+          <div class="col-lg-5" data-aos="fade-right" data-aos-delay="100">
+            <div class="about-img-wrap">
+              <div class="about-img-frame">
+                <img src="seya photo (122).jpg" alt="Seid Dereje" class="about-main-img">
+              </div>
+              <!-- Floating cards removed -->
+              <div class="about-exp-badge">
+                <span class="about-exp-num">2+</span>
+                <span class="about-exp-label">Years of<br>Experience</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Column -->
+          <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
+            <div class="about-content-wrap">
+              <span class="about-tag">About Me</span>
+              <h2 class="about-heading">Frontend Developer &amp;<br><span class="about-heading-accent">UI/UX Enthusiast</span></h2>
+              <p class="about-lead">I build modern, responsive web interfaces with clean code and exceptional user experiences using the latest frontend technologies.</p>
+              <p class="about-body">Focused on performance, accessibility, and creating intuitive digital products that users love. Every project I take on is an opportunity to push the boundaries of what's possible on the web.</p>
+
+              <!-- Info Grid -->
+              <div class="about-info-grid">
+                <div class="about-info-item">
+                  <span class="about-info-label"><i class="bi bi-person"></i> Name</span>
+                  <span class="about-info-value">Seid Dereje</span>
+                </div>
+                <div class="about-info-item">
+                  <span class="about-info-label"><i class="bi bi-telephone"></i> Phone</span>
+                  <span class="about-info-value">+225 980-435-680</span>
+                </div>
+                <div class="about-info-item">
+                  <span class="about-info-label"><i class="bi bi-calendar3"></i> Age</span>
+                  <span class="about-info-value">24 Years</span>
+                </div>
+                <div class="about-info-item">
+                  <span class="about-info-label"><i class="bi bi-envelope"></i> Email</span>
+                  <span class="about-info-value">seynadereje12@gmail.com</span>
+                </div>
+                <div class="about-info-item">
+                  <span class="about-info-label"><i class="bi bi-briefcase"></i> Role</span>
+                  <span class="about-info-value">Frontend Developer</span>
+                </div>
+                <div class="about-info-item">
+                  <span class="about-info-label"><i class="bi bi-globe"></i> Nationality</span>
+                  <span class="about-info-value">Ethiopian</span>
+                </div>
+              </div>
+
+              <!-- Tech Stack Pills -->
+              <div class="about-stack">
+                <span class="about-stack-pill">HTML5</span>
+                <span class="about-stack-pill">CSS3</span>
+                <span class="about-stack-pill">JavaScript</span>
+                <span class="about-stack-pill">React</span>
+                <span class="about-stack-pill">Tailwind</span>
+                <span class="about-stack-pill">Bootstrap</span>
+                <span class="about-stack-pill">Git</span>
+                <span class="about-stack-pill">Figma</span>
+              </div>
+
+              <!-- Signature -->
+              <div class="about-signature">
+                <div class="text-signature-wrap">
+                  <span class="text-signature">Seya Wegide</span>
+                </div>
+                <div>
+                  <strong>Seid Dereje</strong>
+                  <span>Frontend Developer</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- /About Section -->
+
+    <!-- Wavy Divider: About → Resume -->
+    <div class="wave-divider">
+      <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="waveGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%"   stop-color="#ff9f32"/>
+            <stop offset="33%"  stop-color="#ff6eb4"/>
+            <stop offset="66%"  stop-color="#b450ff"/>
+            <stop offset="100%" stop-color="#667eea"/>
+            <animateTransform attributeName="gradientTransform" type="translate" from="-1 0" to="1 0" dur="3.5s" repeatCount="indefinite"/>
+          </linearGradient>
+        </defs>
+        <path class="wave-path" d="M0,50 C180,100 360,0 540,50 C720,100 900,0 1080,50 C1260,100 1380,15 1440,50" fill="none" stroke="url(#waveGrad2)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+      <div class="container">
+        <div class="row justify-content-center g-4">
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="skill-box premium-card">
+              <h3>HTML5</h3>
+              <p>Writing clean, semantic markup for accessible and SEO-friendly websites.</p>
+              <span class="text-end d-block">95%</span>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" role="progressbar"
+                  aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"
+                  style="--progress-width: 95%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="skill-box premium-card">
+              <h3>CSS3</h3>
+              <p>Creating responsive layouts, animations, and modern UI designs.</p>
+              <span class="text-end d-block">90%</span>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" role="progressbar"
+                  aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"
+                  style="--progress-width: 90%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="skill-box premium-card">
+              <h3>JavaScript</h3>
+              <p>Building interactive features and dynamic web experiences.</p>
+              <span class="text-end d-block">85%</span>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" role="progressbar"
+                  aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"
+                  style="--progress-width: 85%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="skill-box premium-card">
+              <h3>React</h3>
+              <p>Building modern single-page applications with React framework.</p>
+              <span class="text-end d-block">80%</span>
+              <div class="skill-progress">
+                <div class="skill-progress-bar" role="progressbar"
+                  aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+                  style="--progress-width: 80%;"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- /Skills Section -->
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+
+      <!-- Premium background -->
+      <div class="resume-bg" aria-hidden="true">
+        <div class="resume-blob rb-1"></div>
+        <div class="resume-blob rb-2"></div>
+        <div class="resume-blob rb-3"></div>
+        <div class="resume-dots"></div>
+        <canvas class="resume-particles" id="resumeParticles"></canvas>
+      </div>
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Resume</h2>
+        <div class="title-shape">
+          <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 0,10 C 40,0 60,20 100,10 C 140,0 160,20 200,10" fill="none" stroke="currentColor" stroke-width="2"></path>
+          </svg>
+        </div>
+        <p>A summary of my experience as a Frontend Developer and my academic background.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row">
+          <div class="col-12">
+            <div class="resume-wrapper">
+              <div class="resume-block" data-aos="fade-up">
+                <h2>Work Experience</h2>
+                <p class="lead">Experience building, deploying, and maintaining scalable web applications.</p>
+
+                <div class="timeline">
+                  <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-left">
+                      <h4 class="company">Senior Frontend Developer</h4>
+                      <span class="period">jun,2023-current</span>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-right">
+                      <h3 class="position">Frontend Team Lead</h3>
+                      <p class="description">Leading frontend development projects, creating responsive user interfaces, and implementing modern JavaScript frameworks to deliver exceptional user experiences.</p>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-left">
+                      <h4 class="company">Frontend Web Developer</h4>
+                      <span class="period">2019 - 2023</span>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-right">
+                      <h3 class="position">Frontend Developer</h3>
+                      <p class="description">
+                        Specialized in creating responsive, interactive web applications using HTML5, CSS3, JavaScript, and modern frameworks like React and Vue.js.
+                      </p>
+                      <ul>
+                        <li>Built responsive user interfaces using HTML, CSS, JavaScript, and modern frameworks</li>
+                        <li>Collaborated with designers to implement pixel-perfect UI/UX designs</li>
+                        <li>Optimized websites for speed, accessibility, and cross-browser compatibility</li>
+                        <li>Maintained and refactored legacy frontend codebases</li>
+                      </ul>
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="timeline-left">
+                      <h4 class="company">Junior Web Developer.</h4>
+                      <span class="period">2015-2019</span>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-right">
+                      <h3 class="position">Junior Frontend Developer</h3>
+                      <p class="description">Started my frontend development journey, learning HTML, CSS, JavaScript, and assisting in building user interfaces under senior developer guidance.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="resume-block" data-aos="fade-up" data-aos-delay="100">
+                <h2>My Education</h2>
+                <p class="lead">Educational background focused on computer science and web technologies.</p>
+
+                <div class="timeline">
+                  <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-left">
+                      <h4 class="company">wollo University</h4>
+                      <span class="period">2017-2019</span>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-right">
+                      <h3 class="position">degree in Consequat</h3>
+                      <p class="description">Specialized in web development, databases, and software engineering.</p>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-left">
+                      <h4 class="company">kompolcha Compus more working code</h4>
+                      <span class="period">2019 - 2023</span>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-right">
+                      <h3 class="position">degree of software engineering (Web Development)</h3>
+                      <p class="description">Proficient in developing scalable full-stack web applications with efficient API integration and robust database management.</p>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="timeline-left">
+                      <h4 class="company">wollo University</h4>
+                      <span class="period">2015-2019</span>
+                    </div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-right">
+                      <h3 class="position">Bachelor of Software Engineering</h3>
+                      <p class="description">Proficient in developing scalable full-stack web applications with efficient API integration and robust database management.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Resume Section -->
+
+    <!-- Wavy Divider: Resume → Portfolio -->
+    <div class="wave-divider">
+      <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="waveGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%"   stop-color="#06b6d4"/>
+            <stop offset="33%"  stop-color="#667eea"/>
+            <stop offset="66%"  stop-color="#b450ff"/>
+            <stop offset="100%" stop-color="#ff6eb4"/>
+            <animateTransform attributeName="gradientTransform" type="translate" from="-1 0" to="1 0" dur="4s" repeatCount="indefinite"/>
+          </linearGradient>
+        </defs>
+        <path class="wave-path" d="M0,50 C180,100 360,0 540,50 C720,100 900,0 1080,50 C1260,100 1380,15 1440,50" fill="none" stroke="url(#waveGrad3)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="pf-section">
+
+      <!-- Premium background -->
+      <div class="pf-bg" aria-hidden="true">
+        <div class="pf-blob pb-1"></div>
+        <div class="pf-blob pb-2"></div>
+        <div class="pf-blob pb-3"></div>
+        <div class="pf-lines"></div>
+        <canvas class="pf-particles" id="pfParticles"></canvas>
+      </div>
+
+      <div class="container">
+
+        <div class="pf-title text-center">
+          <h2>Portfolio</h2>
+          <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg"><path d="M 0,10 C 40,0 60,20 100,10 C 140,0 160,20 200,10" fill="none" stroke="#e07b39" stroke-width="2"></path></svg>
+          <p>Modern frontend interfaces delivering exceptional user experiences through clean code and intuitive design.</p>
+        </div>
+
+        <div class="pf-filters text-center">
+          <button class="pf-btn active" data-filter="all">All Work</button>
+          <button class="pf-btn" data-filter="web">Web Design</button>
+          <button class="pf-btn" data-filter="graphics">Graphics</button>
+          <button class="pf-btn" data-filter="motion">Motion</button>
+          <button class="pf-btn" data-filter="brand">Branding</button>
+        </div>
+
+        <div class="pf-grid" id="pfGrid">
+
+          <div class="pf-item" data-cat="web">
+            <div class="pf-card">
+              <div class="pf-img-wrap">
+                <img src="assets/img/portfolio/portfolio-1.webp" alt="Food Delivery App" loading="lazy">
+                <div class="pf-overlay">
+                  <span class="pf-tag">React &middot; Tailwind CSS</span>
+                  <div class="pf-links">
+                    <a href="assets/img/portfolio/portfolio-1.webp" class="glightbox" data-gallery="pf-gallery" title="Food Delivery App"><i class="bi bi-eye"></i></a>
+                    <a href="portfolio-details.html"><i class="bi bi-arrow-up-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="pf-info">
+                <span class="pf-cat-label">Web Design</span>
+                <h3>Food Delivery App</h3>
+                <p>Responsive food ordering platform with real-time cart, filters, and smooth checkout flow.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pf-item" data-cat="web">
+            <div class="pf-card">
+              <div class="pf-img-wrap">
+                <img src="assets/img/portfolio/portfolio-2.webp" alt="E-commerce Website" loading="lazy">
+                <div class="pf-overlay">
+                  <span class="pf-tag">HTML &middot; CSS &middot; JavaScript</span>
+                  <div class="pf-links">
+                    <a href="assets/img/portfolio/portfolio-2.webp" class="glightbox" data-gallery="pf-gallery" title="E-commerce Website"><i class="bi bi-eye"></i></a>
+                    <a href="portfolio-details.html"><i class="bi bi-arrow-up-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="pf-info">
+                <span class="pf-cat-label">Web Design</span>
+                <h3>E-commerce Website</h3>
+                <p>Full-featured online store with product filtering, wishlist, and fully responsive layout.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pf-item" data-cat="web">
+            <div class="pf-card">
+              <div class="pf-img-wrap">
+                <img src="assets/img/portfolio/portfolio-5.webp" alt="Admin Dashboard" loading="lazy">
+                <div class="pf-overlay">
+                  <span class="pf-tag">React &middot; Bootstrap</span>
+                  <div class="pf-links">
+                    <a href="assets/img/portfolio/portfolio-5.webp" class="glightbox" data-gallery="pf-gallery" title="Admin Dashboard"><i class="bi bi-eye"></i></a>
+                    <a href="portfolio-details.html"><i class="bi bi-arrow-up-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="pf-info">
+                <span class="pf-cat-label">Web Design</span>
+                <h3>Admin Dashboard</h3>
+                <p>Analytics dashboard with charts, data tables, and dark/light mode toggle.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pf-item" data-cat="web">
+            <div class="pf-card">
+              <div class="pf-img-wrap">
+                <img src="assets/img/portfolio/portfolio-8.webp" alt="Task Manager App" loading="lazy">
+                <div class="pf-overlay">
+                  <span class="pf-tag">Vanilla JavaScript</span>
+                  <div class="pf-links">
+                    <a href="assets/img/portfolio/portfolio-8.webp" class="glightbox" data-gallery="pf-gallery" title="Task Manager App"><i class="bi bi-eye"></i></a>
+                    <a href="portfolio-details.html"><i class="bi bi-arrow-up-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="pf-info">
+                <span class="pf-cat-label">Web Design</span>
+                <h3>Task Manager App</h3>
+                <p>Drag-and-drop task app with priority labels, due dates, and progress tracking.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pf-item" data-cat="graphics">
+            <div class="pf-card">
+              <div class="pf-img-wrap">
+                <img src="assets/img/portfolio/portfolio-10.webp" alt="Brand Identity" loading="lazy">
+                <div class="pf-overlay">
+                  <span class="pf-tag">Figma &middot; Adobe XD</span>
+                  <div class="pf-links">
+                    <a href="assets/img/portfolio/portfolio-10.webp" class="glightbox" data-gallery="pf-gallery" title="Brand Identity"><i class="bi bi-eye"></i></a>
+                    <a href="portfolio-details.html"><i class="bi bi-arrow-up-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="pf-info">
+                <span class="pf-cat-label">Graphics</span>
+                <h3>Creative Brand Identity</h3>
+                <p>Full visual identity with logo, color palette, typography, and brand guidelines.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pf-item" data-cat="graphics">
+            <div class="pf-card">
+              <div class="pf-img-wrap">
+                <img src="assets/img/portfolio/portfolio-11.webp" alt="Digital Art Collection" loading="lazy">
+                <div class="pf-overlay">
+                  <span class="pf-tag">Figma &middot; Illustrator</span>
+                  <div class="pf-links">
+                    <a href="assets/img/portfolio/portfolio-11.webp" class="glightbox" data-gallery="pf-gallery" title="Digital Art Collection"><i class="bi bi-eye"></i></a>
+                    <a href="portfolio-details.html"><i class="bi bi-arrow-up-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="pf-info">
+                <span class="pf-cat-label">Graphics</span>
+                <h3>Digital Art Collection</h3>
+                <p>UI illustrations and icon sets designed for web and mobile applications.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pf-item" data-cat="motion">
+            <div class="pf-card">
+              <div class="pf-img-wrap">
+                <img src="assets/img/portfolio/portfolio-7.webp" alt="CSS Animation Library" loading="lazy">
+                <div class="pf-overlay">
+                  <span class="pf-tag">CSS &middot; GSAP</span>
+                  <div class="pf-links">
+                    <a href="assets/img/portfolio/portfolio-7.webp" class="glightbox" data-gallery="pf-gallery" title="CSS Animation Library"><i class="bi bi-eye"></i></a>
+                    <a href="portfolio-details.html"><i class="bi bi-arrow-up-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="pf-info">
+                <span class="pf-cat-label">Motion</span>
+                <h3>CSS Animation Library</h3>
+                <p>30+ reusable keyframe animations for buttons, cards, loaders, and page transitions.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pf-item" data-cat="brand">
+            <div class="pf-card">
+              <div class="pf-img-wrap">
+                <img src="assets/img/portfolio/portfolio-4.webp" alt="Luxury Brand Package" loading="lazy">
+                <div class="pf-overlay">
+                  <span class="pf-tag">Branding &middot; Print</span>
+                  <div class="pf-links">
+                    <a href="assets/img/portfolio/portfolio-4.webp" class="glightbox" data-gallery="pf-gallery" title="Luxury Brand Package"><i class="bi bi-eye"></i></a>
+                    <a href="portfolio-details.html"><i class="bi bi-arrow-up-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="pf-info">
+                <span class="pf-cat-label">Branding</span>
+                <h3>Luxury Brand Package</h3>
+                <p>Logo, business cards, social media templates, and a complete brand style guide.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- /Portfolio Section -->
+          <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 0,10 C 40,0 60,20 100,10 C 140,0 160,20 200,10" fill="none" stroke="currentColor" stroke-width="2"></path>
+          </svg>
+        </div>
+        <p class="services-desc-text">Modern web development combining technical excellence with user-focused design.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row align-items-center">
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <h2 class="fw-bold mb-4 servies-title">Modern Frontend Solutions</h2>
+            <p class="mb-4">
+        Building responsive interfaces with HTML5, CSS3, JavaScript, and modern frameworks for exceptional user experiences.
+         </p>
+            <a href="#" class="btn btn-outline-primary">See all services</a>
+          </div>
+          <div class="col-lg-8">
+            <div class="row g-4">
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-item">
+                  <i class="bi bi-activity icon"></i>
+                  <h3><a href="service-details.html">Frontend Development</a></h3>
+                  <p>Responsive interfaces using HTML5, CSS3, JavaScript, React, and Vue.js for seamless experiences across all devices.</p>
+                </div>
+              </div><!-- End Service Item -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-item">
+                  <i class="bi bi-easel icon"></i>
+                  <h3><a href="service-details.html">UI/UX Design</a></h3>
+                  <p>Intuitive interfaces with wireframes, prototypes, and designs that enhance user engagement.</p>
+                </div>
+              </div><!-- End Service Item -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-item">
+                  <i class="bi bi-broadcast icon"></i>
+                  <h3><a href="service-details.html">Responsive Web Design</a></h3>
+                  <p>Websites that work perfectly on all devices using CSS Grid, Flexbox, and modern responsive techniques.</p>
+                </div>
+              </div><!-- End Service Item -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="service-item">
+                  <i class="bi bi-bounding-box-circles icon"></i>
+                  <h3><a href="service-details.html">Performance Optimization</a></h3>
+                  <p>Optimized performance through code splitting, lazy loading, and modern build tools for fast loading.</p>
+                </div>
+              </div><!-- End Service Item -->
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Frequently Asked Questions</h2>
+        <div class="title-shape">
+          <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 0,10 C 40,0 60,20 100,10 C 140,0 160,20 200,10" fill="none" stroke="currentColor" stroke-width="2"></path>
+          </svg>
+        </div>
+        <p>Modern web development with clean code and exceptional user experiences.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row justify-content-center">
+
+          <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="faq-container">
+
+              <div class="faq-item faq-active">
+                <h3>How do you ensure your websites are user-friendly and responsive?</h3>
+
+                <div class="faq-content">
+                  <p>I focus on building websites that are both visually appealing and highly functional. By using clean code, modern frameworks, and responsive design principles, I ensure every site works seamlessly across all devices and provides an excellent user experience.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3>How do I build fullstack web applications efficiently?</h3>
+                <div class="faq-content">
+                  <p>I develop fullstack applications by integrating both frontend and backend technologies seamlessly. Using modern frameworks, clean code practices, and efficient database management, I ensure applications are scalable, fast, and provide an excellent user experience across all devices.</p>
+
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3>How do I develop fullstack web applications?</h3>
+                <div class="faq-content">
+                  <p>I build fullstack applications by integrating frontend and backend technologies seamlessly. I focus on writing clean, maintainable code, implementing efficient databases, and ensuring responsive, user-friendly interfaces.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3>What technologies do I use for web development?</h3>
+                <div class="faq-content">
+                  <p>I work with modern technologies such as HTML, CSS, JavaScript, React, Node.js, and SQL/NoSQL databases. These tools allow me to create scalable, high-performance applications tailored to client needs.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3>How do I ensure website performance and security?</h3>
+                <div class="faq-content">
+                  <p>I implement best practices for website performance, including code optimization, caching strategies, and secure authentication. I also follow security protocols to protect user data and prevent vulnerabilities.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <h3><h3>How do I handle responsive design and user experience?</h3></h3>
+                <div class="faq-content">
+                  <p>I design websites to be fully responsive across all devices, prioritizing usability and accessibility. My goal is to provide smooth navigation, fast load times, and engaging interfaces for all users.</p>>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+            </div>
+
+          </div><!-- End Faq Column-->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Faq Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section light-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-5">
+          <div class="col-lg-6">
+            <div class="content" data-aos="fade-up" data-aos-delay="200">
+              <div class="section-category mb-3">Contact</div>
+              <h2 class="display-5 mb-4">Building Seamless Digital Experiences</h2>
+              <p class="lead mb-4">I specialize in creating full-stack web applications that are efficient, scalable, and user-friendly, delivering high-quality solutions from concept to deployment.</p>
+
+              <div class="contact-info mt-5">
+                <div class="info-item d-flex mb-3">
+                  <i class="bi bi-envelope-at me-3"></i>
+                  <span>seynadereje12@gmail.com</span>
+                </div>
+
+                <div class="info-item d-flex mb-3">
+                  <i class="bi bi-telephone me-3"></i>
+                  <span>+251 980-435-680</span>
+                </div>
+
+                <div class="info-item d-flex mb-4">
+                  <i class="bi bi-geo-alt me-3"></i>
+                  <span>Wegide, Amhara, Ethiopia</span>
+                </div>
+
+                <a href="https://maps.google.com/?q=Wegide,Amhara,Ethiopia" target="_blank" class="map-link d-inline-flex align-items-center">
+                  Open Map
+                  <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="contact-form card" data-aos="fade-up" data-aos-delay="300">
+              <div class="card-body p-4 p-lg-5">
+
+                <form action="forms/contact.php" method="post" class="php-email-form">
+                  <div class="row gy-4">
+
+                    <div class="col-12">
+                      <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                    </div>
+
+                    <div class="col-12 ">
+                      <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                    </div>
+
+                    <div class="col-12">
+                      <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                    </div>
+
+                    <div class="col-12">
+                      <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                    </div>
+
+                    <div class="col-12 text-center">
+                      <div class="loading">Loading</div>
+                      <div class="error-message"></div>
+                      <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                      <button type="submit" class="btn btn-submit w-100">Submit Message</button>
+                    </div>
+
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="container">
+
+      <!-- Footer Social Links -->
+      <div class="footer-social-row d-flex justify-content-center gap-3 mb-4">
+        <a href="https://www.facebook.com/seynadereje12" target="_blank" class="footer-social-btn fb" title="Facebook">
+          <i class="bi bi-facebook"></i><span>Facebook</span>
+        </a>
+        <a href="https://www.linkedin.com/in/seynadereje12" target="_blank" class="footer-social-btn li" title="LinkedIn">
+          <i class="bi bi-linkedin"></i><span>LinkedIn</span>
+        </a>
+        <a href="https://www.instagram.com/explore/search/?q=0980435680" target="_blank" class="footer-social-btn ig" title="Instagram">
+          <i class="bi bi-instagram"></i><span>Instagram</span>
+        </a>
+        <a href="https://t.me/+251980435680" target="_blank" class="footer-social-btn tg" title="Telegram">
+          <i class="bi bi-telegram"></i><span>Telegram</span>
+        </a>
+      </div>
+
+      <!-- Copyright -->
+      <div class="copyright text-center">
+        <p>© <span>2025</span> <strong class="px-1 sitename">MyFolio</strong> <span>All Rights Reserved</span></p>
+      </div>
+
+      <!-- Credits -->
+      <div class="credits text-center mt-3">
+        Designed &amp; Built by <a href="mailto:seynadereje12@gmail.com" class="footer-designer-link">Seid Dereje</a>
+      </div>
+
+    </div>
+  </footer>
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <!-- Premium Features JS -->
+  <script src="assets/js/premium-features.js"></script>
+
+  <!-- Hero Particles -->
+  <script>
+  (function(){
+    const canvas = document.getElementById('heroParticles');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let W, H, particles = [];
+
+    function resize() {
+      W = canvas.width  = canvas.offsetWidth;
+      H = canvas.height = canvas.offsetHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    function rand(min, max) { return Math.random() * (max - min) + min; }
+
+    for (let i = 0; i < 70; i++) {
+      particles.push({
+        x: rand(0, W), y: rand(0, H),
+        r: rand(1, 2.5),
+        dx: rand(-0.3, 0.3), dy: rand(-0.4, -0.1),
+        alpha: rand(0.2, 0.7),
+        color: ['#00d2ff','#6c63ff','#e07b39','#a78bfa'][Math.floor(rand(0,4))]
+      });
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = p.alpha;
+        ctx.fill();
+        p.x += p.dx; p.y += p.dy;
+        if (p.y < -5) { p.y = H + 5; p.x = rand(0, W); }
+        if (p.x < -5) p.x = W + 5;
+        if (p.x > W + 5) p.x = -5;
+      });
+      ctx.globalAlpha = 1;
+      requestAnimationFrame(draw);
+    }
+    draw();
+  })();
+  </script>
+
+  <!-- Resume Particles — teal/emerald/cyan tones -->
+  <script>
+  (function(){
+    const canvas = document.getElementById('resumeParticles');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let W, H;
+    const pts = [];
+    function resize(){ W = canvas.width = canvas.offsetWidth; H = canvas.height = canvas.offsetHeight; }
+    window.addEventListener('resize', resize); resize();
+    const rand = (a,b) => Math.random()*(b-a)+a;
+    const colors = ['#06b6d4','#10b981','#818cf8','#34d399'];
+    for(let i=0;i<55;i++) pts.push({x:rand(0,W),y:rand(0,H),r:rand(0.8,2.2),dx:rand(-0.2,0.2),dy:rand(-0.35,0.05),a:rand(0.15,0.6),c:colors[Math.floor(rand(0,4))]});
+    function draw(){
+      ctx.clearRect(0,0,W,H);
+      pts.forEach(p=>{
+        ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fillStyle=p.c; ctx.globalAlpha=p.a; ctx.fill();
+        p.x+=p.dx; p.y+=p.dy;
+        if(p.y<-5){p.y=H+5;p.x=rand(0,W);}
+        if(p.x<-5)p.x=W+5; if(p.x>W+5)p.x=-5;
+      });
+      ctx.globalAlpha=1; requestAnimationFrame(draw);
+    }
+    draw();
+  })();
+  </script>
+
+  <!-- Portfolio Particles — magenta/violet/gold tones -->
+  <script>
+  (function(){
+    const canvas = document.getElementById('pfParticles');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let W, H;
+    const pts = [];
+    function resize(){ W = canvas.width = canvas.offsetWidth; H = canvas.height = canvas.offsetHeight; }
+    window.addEventListener('resize', resize); resize();
+    const rand = (a,b) => Math.random()*(b-a)+a;
+    const colors = ['#f59e0b','#ec4899','#8b5cf6','#fbbf24'];
+    for(let i=0;i<60;i++) pts.push({x:rand(0,W),y:rand(0,H),r:rand(1,2.8),dx:rand(-0.25,0.25),dy:rand(-0.3,0.1),a:rand(0.15,0.55),c:colors[Math.floor(rand(0,4))]});
+    function draw(){
+      ctx.clearRect(0,0,W,H);
+      pts.forEach(p=>{
+        ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fillStyle=p.c; ctx.globalAlpha=p.a; ctx.fill();
+        p.x+=p.dx; p.y+=p.dy;
+        if(p.y<-5){p.y=H+5;p.x=rand(0,W);}
+        if(p.x<-5)p.x=W+5; if(p.x>W+5)p.x=-5;
+      });
+      ctx.globalAlpha=1; requestAnimationFrame(draw);
+    }
+    draw();
+  })();
+  </script>
+
+  <!-- ===== HERO SLIDER ENGINE ===== -->
+  <script>
+  (function() {
+    const SLIDE_DURATION = 3000; // 3 seconds
+    const slides   = document.querySelectorAll('.hs-slide');
+    const dots     = document.querySelectorAll('.hs-dot');
+    const bar      = document.getElementById('hsProgressBar');
+    let current    = 0;
+    let timer      = null;
+    let barTimer   = null;
+
+    function goTo(index) {
+      // exit current
+      slides[current].classList.remove('active');
+      slides[current].classList.add('exit');
+      dots[current].classList.remove('active');
+
+      setTimeout(() => {
+        slides[current].classList.remove('exit');
+        current = index;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }, 900);
+
+      current = index;
+    }
+
+    function next() {
+      const nextIndex = (current + 1) % slides.length;
+      goTo(nextIndex);
+      resetBar();
+    }
+
+    function resetBar() {
+      if (bar) {
+        bar.style.transition = 'none';
+        bar.style.width = '0%';
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            bar.style.transition = 'width ' + SLIDE_DURATION + 'ms linear';
+            bar.style.width = '100%';
+          });
+        });
+      }
+    }
+
+    function startAuto() {
+      timer = setInterval(next, SLIDE_DURATION);
+    }
+
+    function stopAuto() {
+      clearInterval(timer);
+    }
+
+    // Dot click
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        stopAuto();
+        goTo(i);
+        resetBar();
+        startAuto();
+      });
+    });
+
+    // Pause on hover
+    const slider = document.getElementById('heroSlider');
+    if (slider) {
+      slider.addEventListener('mouseenter', stopAuto);
+      slider.addEventListener('mouseleave', () => { stopAuto(); startAuto(); });
+    }
+
+    // Kick off
+    resetBar();
+    startAuto();
+  })();
+  </script>
+
+</body>
+</html>
