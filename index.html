@@ -238,6 +238,19 @@
     section {
       scroll-margin-top: 80px;
     }
+
+    /* Header profile image */
+    .header-profile-img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      border: 2px solid var(--accent-color, #0d6efd);
+      margin-right: 10px;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.2);
+    }
     
     #hero {
       scroll-margin-top: 0;
@@ -298,8 +311,7 @@
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.webp" alt=""> -->
+        <img src="abu faruk.jpg" alt="Abu Faruk" class="header-profile-img">
         <h1 class="sitename">MyFolio</h1>
       </a>
 
