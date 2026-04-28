@@ -21,6 +21,8 @@
    <link rel="stylesheet" href="bootstrap.css">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <!-- Google Fonts � Poppins for rounded letter shapes -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
@@ -251,11 +253,683 @@
       flex-shrink: 0;
       box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.2);
     }
-    
-    #hero {
-      scroll-margin-top: 0;
+
+    /* -- Slide 1 Hero Styles (reference image match) -- */
+    .hero-s1-title {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 0.3rem;
+      font-family: 'Poppins', 'Segoe UI', sans-serif;
     }
-    
+    .hero-s1-hi {
+      background: linear-gradient(90deg, #c8d44e, #e8e04a, #b8cc30);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-style: italic;
+    }
+    .hero-s1-im {
+      background: linear-gradient(90deg, #c8d44e, #e8e04a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-style: italic;
+    }
+    .hero-s1-name {
+      font-style: italic;
+      font-size: 1em;
+      font-weight: 900;
+    }
+    .hero-s1-name-first {
+      font-size: 1em;
+      font-weight: 900;
+      font-style: italic;
+      background: linear-gradient(160deg, #e8c840 0%, #1a5fa8 60%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: inline;
+    }
+    .hero-s1-name-rest {
+      color: #ffffff;
+      font-weight: 900;
+      font-style: italic;
+    }
+    .hero-s1-role-wrap {
+      margin: 0.6rem 0 1rem;
+    }
+    .hero-s1-role {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 900;
+      font-style: normal;
+      margin: 0;
+      font-family: 'Poppins', 'Segoe UI', sans-serif;
+      background: linear-gradient(90deg, #4a90d9, #5ba8e8, #7ec8e3, #a8d8ea);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 0px;
+    }
+    .hero-s1-dot {
+      background: linear-gradient(90deg, #e8c840, #f0d060);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-s1-underline {
+      height: 3px;
+      width: 100%;
+      background: linear-gradient(90deg, #c8d44e, #e8c840, transparent);
+      border-radius: 2px;
+      margin-top: 6px;
+    }
+    .hero-s1-desc {
+      color: rgba(200, 215, 235, 0.75);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-top: 1rem;
+      font-family: 'Courier New', monospace;
+      letter-spacing: 0.02em;
+    }
+    .hero-s1-contact-btn {
+      display: inline-block;
+      padding: 0.75rem 2.2rem;
+      border: 2px solid #e8c840;
+      border-radius: 50px;
+      color: #e8c840;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      background: transparent;
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    }
+    .hero-s1-contact-btn:hover {
+      background: #e8c840;
+      color: #0a1428;
+      box-shadow: 0 0 20px rgba(232, 200, 64, 0.5);
+    }
+
+    /* ── Hero MENU button ── */
+    .hero-menu-btn {
+      position: fixed;
+      top: 18px;
+      right: 24px;
+      z-index: 1100;
+      display: inline-block;
+      padding: 0.6rem 1.8rem;
+      border: none;
+      border-radius: 50px;
+      background: #b8f55a;
+      color: #0a1a00;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.14em;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+      box-shadow: 0 4px 18px rgba(184,245,90,0.4);
+    }
+    .hero-menu-btn:hover {
+      background: #ccff77;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(184,245,90,0.55);
+    }
+
+    /* ── Full-screen menu overlay ── */
+    .hero-menu-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: linear-gradient(135deg, #071428 0%, #0a1e3a 50%, #071428 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+    }
+    .hero-menu-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .hero-menu-close {
+      position: absolute;
+      top: 28px; right: 36px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #ffffff;
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .hero-menu-close:hover {
+      background: rgba(184,245,90,0.2);
+      color: #b8f55a;
+      transform: rotate(90deg);
+    }
+    .hero-menu-nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-menu-link {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 18px 48px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(184,245,90,0.15);
+      border-radius: 60px;
+      color: #ffffff;
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      min-width: 320px;
+      justify-content: center;
+      transition: background 0.3s, border-color 0.3s, color 0.3s, transform 0.3s;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .hero-menu-overlay.open .hero-menu-link {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .hero-menu-overlay.open .hero-menu-link:nth-child(1) { transition: all 0.4s ease 0.1s; }
+    .hero-menu-overlay.open .hero-menu-link:nth-child(2) { transition: all 0.4s ease 0.18s; }
+    .hero-menu-overlay.open .hero-menu-link:nth-child(3) { transition: all 0.4s ease 0.26s; }
+    .hero-menu-overlay.open .hero-menu-link:nth-child(4) { transition: all 0.4s ease 0.34s; }
+    .hero-menu-link:hover {
+      background: rgba(184,245,90,0.12);
+      border-color: rgba(184,245,90,0.5);
+      color: #b8f55a;
+      transform: scale(1.04);
+    }
+    .hero-menu-num {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #b8f55a;
+      opacity: 0.7;
+      letter-spacing: 0.1em;
+    }
+
+    /* -- Skill Cards with Logos -- */
+    .skills-card-section {
+      background: linear-gradient(160deg, #071428 0%, #0a1e3a 40%, #0d2a45 70%, #071428 100%);
+      padding: 70px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .skills-card-section::before {
+      content: '';
+      position: absolute;
+      top: -120px; left: -120px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(74,144,217,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .skills-card-section::after {
+      content: '';
+      position: absolute;
+      bottom: -100px; right: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(126,200,227,0.09) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .skills-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .sk-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(74,144,217,0.18);
+      border-radius: 16px;
+      padding: 22px 20px 18px;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    .sk-card.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .sk-card:nth-child(1) { transition-delay: 0.05s; }
+    .sk-card:nth-child(2) { transition-delay: 0.10s; }
+    .sk-card:nth-child(3) { transition-delay: 0.15s; }
+    .sk-card:nth-child(4) { transition-delay: 0.20s; }
+    .sk-card:nth-child(5) { transition-delay: 0.25s; }
+    .sk-card:nth-child(6) { transition-delay: 0.30s; }
+    .sk-card:nth-child(7) { transition-delay: 0.35s; }
+    .sk-card:nth-child(8) { transition-delay: 0.40s; }
+    .sk-card:hover {
+      transform: translateY(-6px) !important;
+      box-shadow: 0 14px 36px rgba(74,144,217,0.2);
+      border-color: rgba(74,144,217,0.55);
+      background: rgba(74,144,217,0.07);
+    }
+    .sk-card-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+    .sk-logo {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      flex-shrink: 0;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.35));
+      transition: transform 0.3s ease;
+    }
+    .sk-card:hover .sk-logo {
+      transform: scale(1.15) rotate(-5deg);
+    }
+    .sk-name {
+      color: #e8f0ff !important;
+      font-size: 1rem !important;
+      font-weight: 700 !important;
+      font-family: 'Poppins', sans-serif !important;
+      margin: 0 0 2px !important;
+    }
+    .sk-pct {
+      color: #e07b39;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .sk-desc {
+      color: rgba(180,205,230,0.7) !important;
+      font-size: 0.85rem !important;
+      line-height: 1.6;
+      margin-bottom: 14px !important;
+    }
+    .sk-bar-wrap {
+      height: 6px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .sk-bar {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #667eea 0%, #4a90d9 50%, #7ec8e3 100%);
+      border-radius: 10px;
+      transition: width 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+    .sk-bar::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 6px; height: 6px;
+      background: #fff;
+      border-radius: 50%;
+      opacity: 0.8;
+      box-shadow: 0 0 6px rgba(255,255,255,0.8);
+    }
+    .sk-card.in-view .sk-bar {
+      width: var(--w);
+    }
+
+    /* -- Modern FAQ Section -- */
+    .faq-modern-section {
+      background: linear-gradient(160deg, #0a1628 0%, #0d1f3a 50%, #0a1628 100%) !important;
+      padding: 90px 0 !important;
+      position: relative;
+      overflow: hidden;
+    }
+    .faq-modern-section::before {
+      content: '';
+      position: absolute;
+      top: -100px; left: 50%;
+      transform: translateX(-50%);
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(74,144,217,0.1) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .faq-modern-section::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; right: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(126,200,227,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .faq-modern-header {
+      text-align: center;
+      margin-bottom: 56px;
+      animation: faqFadeDown 0.7s ease both;
+    }
+    @keyframes faqFadeDown {
+      from { opacity: 0; transform: translateY(-24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .faq-modern-tag {
+      display: inline-block;
+      background: linear-gradient(90deg, rgba(74,144,217,0.18), rgba(126,200,227,0.18));
+      border: 1px solid rgba(74,144,217,0.4);
+      color: #7ec8e3;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 6px 20px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+    }
+    .faq-modern-title {
+      color: #ffffff !important;
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .faq-modern-accent {
+      background: linear-gradient(90deg, #4a90d9, #7ec8e3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .faq-modern-subtitle {
+      color: rgba(180,205,230,0.7) !important;
+      font-size: 1rem;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .faq-modern-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .faq-modern-item {
+      background: rgba(255,255,255,0.04) !important;
+      border: 1px solid rgba(74,144,217,0.2) !important;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      animation: faqSlideUp 0.5s ease both;
+    }
+    .faq-modern-item:nth-child(1) { animation-delay: 0.05s; }
+    .faq-modern-item:nth-child(2) { animation-delay: 0.10s; }
+    .faq-modern-item:nth-child(3) { animation-delay: 0.15s; }
+    .faq-modern-item:nth-child(4) { animation-delay: 0.20s; }
+    .faq-modern-item:nth-child(5) { animation-delay: 0.25s; }
+    .faq-modern-item:nth-child(6) { animation-delay: 0.30s; }
+    .faq-modern-item:nth-child(7) { animation-delay: 0.35s; }
+    @keyframes faqSlideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .faq-modern-item:hover {
+      border-color: rgba(74,144,217,0.5) !important;
+      box-shadow: 0 6px 28px rgba(74,144,217,0.14);
+      transform: translateY(-2px);
+    }
+    .faq-modern-item.active {
+      border-color: rgba(74,144,217,0.55) !important;
+      box-shadow: 0 8px 32px rgba(74,144,217,0.18);
+      background: rgba(74,144,217,0.07) !important;
+    }
+    .faq-modern-question {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 20px 24px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .faq-modern-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(74,144,217,0.25), rgba(126,200,227,0.25));
+      border: 1px solid rgba(74,144,217,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7ec8e3;
+      font-size: 1.05rem;
+      flex-shrink: 0;
+      transition: background 0.3s;
+    }
+    .faq-modern-item.active .faq-modern-icon {
+      background: linear-gradient(135deg, rgba(74,144,217,0.45), rgba(126,200,227,0.45));
+    }
+    .faq-modern-question h3 {
+      flex: 1;
+      color: #d0e8ff !important;
+      font-size: 1rem !important;
+      font-weight: 600 !important;
+      font-family: 'Poppins', sans-serif !important;
+      margin: 0 !important;
+      line-height: 1.45;
+    }
+    .faq-modern-item.active .faq-modern-question h3 {
+      color: #7ec8e3 !important;
+    }
+    .faq-modern-arrow {
+      color: #5ba8e8;
+      font-size: 1rem;
+      transition: transform 0.35s ease;
+      flex-shrink: 0;
+    }
+    .faq-modern-item.active .faq-modern-arrow {
+      transform: rotate(180deg);
+      color: #7ec8e3;
+    }
+    .faq-modern-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 24px 0 78px;
+    }
+    .faq-modern-item.active .faq-modern-answer {
+      max-height: 220px;
+      padding: 0 24px 22px 78px;
+    }
+    .faq-modern-answer p {
+      color: rgba(185,210,235,0.85) !important;
+      font-size: 0.95rem !important;
+      line-height: 1.8;
+      margin: 0 !important;
+      border-left: 3px solid rgba(74,144,217,0.4);
+      padding-left: 14px;
+    }
+    .faq-modern-answer strong {
+      color: #a8d8ea !important;
+      font-weight: 600;
+    }
+
+    /* -- Typing cursor -- */
+    .hero-role-cursor {
+      display: inline-block;
+      color: #e8c840;
+      font-weight: 300;
+      animation: cursorBlink 0.75s step-end infinite;
+      margin-left: 2px;
+    }
+    @keyframes cursorBlink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+
+    /* -- Per-letter color wave on the typed text -- */
+    .hero-role-typed .letter {
+      display: inline-block;
+      animation: letterWave 2.5s ease-in-out infinite;
+    }
+    @keyframes letterWave {
+      0%,100% { color: #4a90d9; text-shadow: 0 0 8px rgba(74,144,217,0.6); }
+      25%     { color: #7ec8e3; text-shadow: 0 0 12px rgba(126,200,227,0.8); }
+      50%     { color: #a8d8ea; text-shadow: 0 0 16px rgba(168,216,234,0.9); }
+      75%     { color: #5ba8e8; text-shadow: 0 0 10px rgba(91,168,232,0.7); }
+    }
+
+    /* -- Frontend Skills Strip -- */
+    .skills-strip-section {
+      background: linear-gradient(135deg, #0b1e3d 0%, #0d2a45 30%, #0e3a50 60%, #0d4a5a 100%);
+      padding: 70px 0 65px;
+      min-height: 320px;
+      overflow: hidden;
+      position: relative;
+    }
+    .skills-strip-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(6,182,212,0.12) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 50%, rgba(14,116,144,0.10) 0%, transparent 55%);
+      pointer-events: none;
+  
+    }
+    .skills-strip-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 450px;
+      text-align: center;
+    }
+    .skills-strip-title {
+      color: #ffffff;
+      font-size: 3.2rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      letter-spacing: 3px;
+      text-indent: 3px;
+      font-family: 'Poppins', 'Nunito', 'Segoe UI Rounded', sans-serif;
+      text-shadow: 2px 4px 12px rgba(0,0,0,0.4);
+    }
+    .skills-strip-underline {
+      width: 180px;
+      margin: 0 auto 36px;
+      position: relative;
+      height: 10px;
+    }
+    .skills-strip-underline::before {
+      content: '';
+      display: block;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, #b8a000, #e8c840, #e8c840, #b8a000, transparent);
+      border-radius: 2px;
+      margin-bottom: 4px;
+    }
+    .skills-strip-underline::after {
+      content: '';
+      display: block;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #8ab0c8, #c8dce8, #c8dce8, #8ab0c8, transparent);
+      border-radius: 2px;
+    }
+    .skills-track-wrap {
+      overflow: hidden;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+    }
+    .skills-track {
+      display: flex;
+      align-items: center;
+      gap: 70px;
+      width: max-content;
+      padding: 10px 0;
+      will-change: transform;
+    }
+    .skills-track:hover {
+      animation-play-state: paused;
+    }
+    @keyframes skillsScroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(calc(-50% - 35px)); }
+    }
+    .skill-icon-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .skill-icon-wrap img {
+      width: 110px;
+      height: 110px;
+      padding: 22px;
+      background: #ffffff;
+      border: 3px solid rgba(255,255,255,0.9);
+      border-radius: 50%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      object-fit: contain;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    }
+    .skill-icon-wrap:hover img {
+      transform: translateY(-8px) scale(1.12);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.35);
+    }
+    .skill-icon-wrap span {
+      color: rgba(220,235,255,0.95);
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      font-family: 'Poppins', 'Segoe UI', sans-serif;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    }
+
+    /* Hide header bar completely */
+    #header {
+      display: none !important;
+    }
+
+    /* Sections hidden by default — shown via MENU */
+    #about, #resume, #portfolio, #faq, #skills {
+      display: none !important;
+    }
+    #about.section-visible,
+    #resume.section-visible,
+    #portfolio.section-visible,
+    #faq.section-visible,
+    #skills.section-visible {
+      display: block !important;
+      animation: sectionReveal 0.5s ease both;
+    }
+    @keyframes sectionReveal {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    /* Hide wave dividers between hidden sections */
+    .wave-divider {
+      display: none !important;
+    }
+    .hero-section {
+      min-height: 100vh !important;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      display: flex !important;
+      align-items: center !important;
+    }
+    .hero-section .hs-slider,
+    .hero-section .hs-slide,
+    .hero-section .hs-slide.active {
+      display: flex !important;
+      align-items: center !important;
+      min-height: 100vh !important;
+      width: 100% !important;
+    }
+    .hero-section .hero-container {
+      width: 100% !important;
+    }
+
     /* Smooth Animations */
     .fade-in {
       opacity: 0;
@@ -315,29 +989,14 @@
         <h1 class="sitename">MyFolio</h1>
       </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#resume">Resume</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact" class="nav-contact-btn">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-      <div class="header-social-links">
-        <a href="https://www.facebook.com/seynadereje12" target="_blank" class="facebook" title="Facebook"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.linkedin.com/in/seynadereje12" target="_blank" class="linkedin" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-        <a href="https://www.instagram.com/explore/search/?q=0980435680" target="_blank" class="instagram" title="Instagram"><i class="bi bi-instagram"></i></a>
-        <a href="https://t.me/+251980435680" target="_blank" class="telegram" title="Telegram"><i class="bi bi-telegram"></i></a>
       </div>
 
     </div>
   </header>
-  
+
+  <!-- Fixed MENU Button (top-right) -->
+  <button class="hero-menu-btn" id="heroMenuBtn">MENU</button>
+
   <!-- Theme Toggle Button -->
   <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
     <i class="bi bi-moon-stars-fill"></i>
@@ -359,181 +1018,38 @@
     <!-- ===== SLIDER WRAPPER ===== -->
     <div class="hs-slider" id="heroSlider">
 
-      <!-- ── SLIDE 1 (current home, kept exactly) ── -->
+      <!-- -- SLIDE 1 -- -->
       <div class="hs-slide active" data-slide="0">
+        <!-- Dark navy background matching reference -->
+        <div class="hs-slide-bg" style="background: linear-gradient(160deg,#071428 0%,#0a1a35 40%,#081020 70%,#050c1a 100%)"></div>
         <div class="container hero-container">
           <div class="row align-items-center g-5">
-            <div class="col-lg-6 hero-text-col">
-              <div class="hero-badge"><span class="hero-badge-dot"></span>Available for Work</div>
-              <h1 class="hero-title"><span style="color:#ffffff;font-weight:900;font-size:1.1em;text-shadow:0 0 30px rgba(102,126,234,0.8),0 0 60px rgba(180,80,255,0.4);letter-spacing:-1px;">Hi, I'm a</span><br><span class="hero-gradient-text">Frontend Developer</span></h1>
-              <p class="hero-subtitle">Crafting Beautiful &amp; Interactive User Experiences</p>
-              <p class="hero-desc">I specialize in creating modern, responsive, and user-friendly web interfaces using HTML5, CSS3, JavaScript, and React. From wireframes to live deployment — focused on performance, usability, and clean code.</p>
-              <div class="hero-tech-pills">
-                <span class="hero-pill"><i class="bi bi-filetype-html"></i> HTML5</span>
-                <span class="hero-pill"><i class="bi bi-filetype-css"></i> CSS3</span>
-                <span class="hero-pill"><i class="bi bi-filetype-js"></i> JavaScript</span>
-                <span class="hero-pill"><i class="bi bi-code-slash"></i> React</span>
-              </div>
-              <div class="hero-actions">
-                <a href="#portfolio" class="hero-btn-primary">View My Work <i class="bi bi-arrow-right"></i></a>
-                <a href="#contact" class="hero-btn-secondary">Contact Me</a>
-              </div>
-              <div class="hero-stats">
-                <div class="hero-stat"><span class="hero-stat-num">2+</span><span class="hero-stat-label">Years Exp.</span></div>
-                <div class="hero-stat-divider"></div>
-                <div class="hero-stat"><span class="hero-stat-num">20+</span><span class="hero-stat-label">Projects</span></div>
-                <div class="hero-stat-divider"></div>
-                <div class="hero-stat"><span class="hero-stat-num">10+</span><span class="hero-stat-label">Clients</span></div>
-              </div>
-            </div>
-            <div class="col-lg-6 hero-img-col">
-              <div class="hero-img-grid">
-                <div class="hero-glass-frame">
-                  <div class="hero-glass-header">
-                    <span class="hero-glass-dot red"></span>
-                    <span class="hero-glass-dot yellow"></span>
-                    <span class="hero-glass-dot green"></span>
-                    <span class="hero-glass-title">portfolio.dev</span>
-                  </div>
-                  <div class="hero-img-main">
-                    <img src="seyaman.jpg" alt="Seid Dereje - Frontend Developer">
-                    <div class="hero-img-ring"></div>
-                    <div class="hero-img-badge"><i class="bi bi-code-slash"></i><span>Frontend Dev</span></div>
-                  </div>
-                </div>
-                <div class="hero-img-side">
-                  <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=90" alt="Coding">
-                </div>
-                <div class="hero-float-badge hero-float-1"><i class="bi bi-star-fill"></i> Top Rated</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+            <div class="col-lg-8 mx-auto hero-text-col">
 
-      <!-- ── SLIDE 2: Seya Dereje — Frontend Developer (dual layout) ── -->
-      <div class="hs-slide" data-slide="1">
-        <div class="hs-slide-bg" style="background:
-          radial-gradient(ellipse at 10% 20%, rgba(6,182,212,0.28) 0%, transparent 45%),
-          radial-gradient(ellipse at 90% 80%, rgba(102,126,234,0.28) 0%, transparent 45%),
-          radial-gradient(ellipse at 50% 50%, rgba(180,80,255,0.12) 0%, transparent 60%),
-          radial-gradient(ellipse at 80% 10%, rgba(255,110,180,0.12) 0%, transparent 40%),
-          linear-gradient(145deg, #020818 0%, #040f2a 30%, #060820 60%, #010510 100%)">
-        </div>
-        <div class="container hero-container">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-6 hero-text-col">
-              <div class="hero-badge" style="border-color:rgba(6,182,212,.4);color:#06b6d4"><span class="hero-badge-dot" style="background:#06b6d4"></span>Available for Work</div>
-              <h1 class="hero-title"><span style="background:linear-gradient(90deg,#ff9f32,#ff6eb4,#c850c0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:800;">Hi, I'm</span><br><span style="background:linear-gradient(90deg,#06b6d4,#667eea);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Seya Dereje</span></h1>
-              <p class="hero-subtitle">Frontend Developer &amp; Visual Architect</p>
-              <p class="hero-desc">I transform ideas into elegant, high-performance web experiences. With a sharp eye for design and a passion for clean code, I build interfaces that captivate users and elevate brands globally.</p>
-              <div class="hero-tech-pills">
-                <span class="hero-pill"><i class="bi bi-filetype-html"></i> HTML5</span>
-                <span class="hero-pill"><i class="bi bi-filetype-css"></i> CSS3</span>
-                <span class="hero-pill"><i class="bi bi-filetype-js"></i> JavaScript</span>
-                <span class="hero-pill"><i class="bi bi-code-slash"></i> React</span>
-              </div>
-              <div class="hero-actions">
-                <a href="#portfolio" class="hero-btn-primary" style="background:linear-gradient(135deg,#06b6d4,#667eea)">My Work <i class="bi bi-arrow-right"></i></a>
-                <a href="#contact" class="hero-btn-secondary">Contact</a>
-              </div>
-              <div class="hero-stats">
-                <div class="hero-stat"><span class="hero-stat-num">2+</span><span class="hero-stat-label">Years Exp.</span></div>
-                <div class="hero-stat-divider"></div>
-                <div class="hero-stat"><span class="hero-stat-num">18+</span><span class="hero-stat-label">Projects</span></div>
-                <div class="hero-stat-divider"></div>
-                <div class="hero-stat"><span class="hero-stat-num">8+</span><span class="hero-stat-label">Clients</span></div>
-              </div>
-            </div>
-            <div class="col-lg-6 hero-img-col">
-              <div class="hs-dual-img">
-                <div class="hs-img-primary">
-                  <img src="abuzubeir.jpg" alt="Seya Dereje - Frontend Developer">
-                  <div class="hs-img-overlay"><span><i class="bi bi-stars"></i> Visual Architect</span></div>
-                </div>
-                <div class="hs-img-secondary">
-                  <img src="image download.png" alt="Software">
-                  <div class="hs-img-overlay"><span><i class="bi bi-code-slash"></i> Software</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+              <!-- Hi, / I'm  Abu Faruk -->
+              <h1 class="hero-s1-title">
+                <span class="hero-s1-hi">Hi,</span><br>
+                <span class="hero-s1-im">I'm &nbsp;<span class="hero-s1-name"><span class="hero-s1-name-first">A</span><span class="hero-s1-name-rest">bu Faruk</span></span></span>
+              </h1>
 
-      <!-- ── SLIDE 3: Seya — Frontend Developer ── -->
-      <div class="hs-slide" data-slide="2">
-        <div class="hs-slide-bg" style="background: linear-gradient(135deg,#001a0f 0%,#003320 40%,#001a10 70%,#000a05 100%)"></div>
-        <div class="container hero-container">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-6 hero-text-col">
-              <div class="hero-badge" style="border-color:rgba(16,185,129,.4);color:#10b981"><span class="hero-badge-dot" style="background:#10b981"></span>Available Now</div>
-              <h1 class="hero-title"><span style="background:linear-gradient(90deg,#ff9f32,#ff6eb4,#c850c0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-weight:800;">Creative</span><br><span style="background:linear-gradient(90deg,#10b981,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Frontend Dev</span></h1>
-              <p class="hero-subtitle">Building Beautiful, Responsive Web Interfaces</p>
-              <p class="hero-desc">Crafting pixel-perfect, high-performance frontend experiences using modern frameworks and clean code. Every interface I build is fast, accessible, and delightful to use.</p>
-              <div class="hero-tech-pills">
-                <span class="hero-pill"><i class="bi bi-filetype-html"></i> HTML5</span>
-                <span class="hero-pill"><i class="bi bi-filetype-css"></i> CSS3</span>
-                <span class="hero-pill"><i class="bi bi-code-slash"></i> React</span>
-                <span class="hero-pill"><i class="bi bi-bootstrap"></i> Bootstrap</span>
+              <!-- Web Developer. animated -->
+              <div class="hero-s1-role-wrap">
+                <p class="hero-s1-role">
+                  <span class="hero-role-typed" id="heroRoleTyped"></span><span class="hero-role-cursor">|</span>
+                </p>
+                <div class="hero-s1-underline" id="heroRoleUnderline" style="width:0%"></div>
               </div>
-              <div class="hero-actions">
-                <a href="#portfolio" class="hero-btn-primary" style="background:linear-gradient(135deg,#10b981,#06b6d4)">View Projects <i class="bi bi-arrow-right"></i></a>
-                <a href="#contact" class="hero-btn-secondary">Let's Talk</a>
-              </div>
-              <div class="hero-stats">
-                <div class="hero-stat"><span class="hero-stat-num">2+</span><span class="hero-stat-label">Years Exp.</span></div>
-                <div class="hero-stat-divider"></div>
-                <div class="hero-stat"><span class="hero-stat-num">20+</span><span class="hero-stat-label">Projects</span></div>
-                <div class="hero-stat-divider"></div>
-                <div class="hero-stat"><span class="hero-stat-num">10+</span><span class="hero-stat-label">Clients</span></div>
-              </div>
-            </div>
-            <div class="col-lg-6 hero-img-col">
-              <div class="hs-single-img">
-                <img src="seya photo (122).jpg" alt="Seya - Frontend Developer">
-                <div class="hs-img-overlay"><span><i class="bi bi-code-slash"></i> Frontend Developer</span></div>
-                <div class="hs-img-glow" style="background:radial-gradient(circle,rgba(16,185,129,0.3),transparent 70%)"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- ── SLIDE 4: Abu Faruk — UI/UX Designer (solo) ── -->
-      <div class="hs-slide" data-slide="3">
-        <div class="hs-slide-bg" style="background: linear-gradient(135deg,#0a001f 0%,#1a0040 40%,#0d0030 70%,#050010 100%)"></div>
-        <div class="container hero-container">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-6 hero-text-col">
-              <div class="hero-badge" style="border-color:rgba(255,160,50,.4);color:#ff9f32"><span class="hero-badge-dot" style="background:#ff9f32"></span>Open to Projects</div>
-              <h1 class="hero-title"><span style="color:#ffffff;font-weight:900;font-size:1.1em;text-shadow:0 0 30px rgba(255,160,50,0.8),0 0 60px rgba(255,110,180,0.4);letter-spacing:-1px;">Hi, I'm</span><br><span style="background:linear-gradient(90deg,#ff9f32,#ff6eb4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Abu Faruk</span></h1>
-              <p class="hero-subtitle">UI/UX Designer &amp; Creative Developer</p>
-              <p class="hero-desc">Designing intuitive, pixel-perfect interfaces that delight users. I blend creativity with technical precision to build experiences that are both beautiful and functional across all platforms.</p>
-              <div class="hero-tech-pills">
-                <span class="hero-pill"><i class="bi bi-pen"></i> Figma</span>
-                <span class="hero-pill"><i class="bi bi-palette"></i> Adobe XD</span>
-                <span class="hero-pill"><i class="bi bi-phone"></i> Mobile UI</span>
-                <span class="hero-pill"><i class="bi bi-grid"></i> Design Systems</span>
+              <!-- Description -->
+              <p class="hero-s1-desc">Frontend Developer Basic Skill's are HTML5 | CSS3 | JavaScript | React | Bootstrap | Tailwind CSS ...</p>
+
+              <!-- Contact Me button -->
+              <div class="hero-actions mt-4">
+                <a href="#contact" class="hero-s1-contact-btn">CONTACT ME</a>
               </div>
-              <div class="hero-actions">
-                <a href="#portfolio" class="hero-btn-primary" style="background:linear-gradient(135deg,#ff9f32,#ff6eb4)">See My Designs <i class="bi bi-arrow-right"></i></a>
-                <a href="#contact" class="hero-btn-secondary">Hire Me</a>
-              </div>
-              <div class="hero-stats">
-                <div class="hero-stat"><span class="hero-stat-num">3+</span><span class="hero-stat-label">Years Exp.</span></div>
-                <div class="hero-stat-divider"></div>
-                <div class="hero-stat"><span class="hero-stat-num">30+</span><span class="hero-stat-label">Designs</span></div>
-                <div class="hero-stat-divider"></div>
-                <div class="hero-stat"><span class="hero-stat-num">15+</span><span class="hero-stat-label">Clients</span></div>
-              </div>
-            </div>
-            <div class="col-lg-6 hero-img-col">
-              <div class="hs-single-img">
-                <img src="abu faruk.jpg" alt="Abu Faruk - UI/UX Designer">
-                <div class="hs-img-overlay"><span><i class="bi bi-pen"></i> UI/UX Designer</span></div>
-                <div class="hs-img-glow" style="background:radial-gradient(circle,rgba(255,160,50,0.3),transparent 70%)"></div>
-              </div>
+
+
+
             </div>
           </div>
         </div>
@@ -541,20 +1057,34 @@
 
     </div><!-- /hs-slider -->
 
-    <!-- Slider dots -->
-    <div class="hs-dots">
-      <button class="hs-dot active" data-dot="0"></button>
-      <button class="hs-dot" data-dot="1"></button>
-      <button class="hs-dot" data-dot="2"></button>
-      <button class="hs-dot" data-dot="3"></button>
-    </div>
-
     <!-- Progress bar -->
     <div class="hs-progress"><div class="hs-progress-bar" id="hsProgressBar"></div></div>
 
+  </section><!-- /hero-section -->
+
+  <!-- ===== Frontend Skills Strip ===== -->
+  <section class="skills-strip-section">
+    <div class="skills-strip-inner">
+      <h2 class="skills-strip-title">Skills</h2>
+      <div class="skills-strip-underline"></div>
+      <div class="skills-track-wrap">
+        <div class="skills-track" id="skillsTrack">
+          <div class="skill-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"><span>HTML5</span></div>
+          <div class="skill-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"><span>CSS3</span></div>
+          <div class="skill-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><span>JavaScript</span></div>
+          <div class="skill-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"><span>React</span></div>
+          <div class="skill-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap"><span>Bootstrap</span></div>
+          <div class="skill-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS"><span>Tailwind</span></div>
+          <div class="skill-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><span>Git</span></div>
+          <div class="skill-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma"><span>Figma</span></div>
+          <div class="skill-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript"><span>TypeScript</span></div>
+          <div class="skill-icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code"><span>VS Code</span></div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Wavy Divider: Hero → About -->
+  <!-- Wavy Divider: Hero ? About -->
   <div class="wave-divider">
     <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
       <defs>
@@ -675,7 +1205,7 @@
       </div>
     </section><!-- /About Section -->
 
-    <!-- Wavy Divider: About → Resume -->
+    <!-- Wavy Divider: About ? Resume -->
     <div class="wave-divider">
       <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
         <defs>
@@ -692,60 +1222,112 @@
     </div>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills section">
+    <section id="skills" class="skills-card-section">
       <div class="container">
-        <div class="row justify-content-center g-4">
+        <div class="skills-card-grid">
 
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-            <div class="skill-box premium-card">
-              <h3>HTML5</h3>
-              <p>Writing clean, semantic markup for accessible and SEO-friendly websites.</p>
-              <span class="text-end d-block">95%</span>
-              <div class="skill-progress">
-                <div class="skill-progress-bar" role="progressbar"
-                  aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"
-                  style="--progress-width: 95%;"></div>
+          <!-- HTML5 -->
+          <div class="sk-card">
+            <div class="sk-card-top">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="sk-logo">
+              <div>
+                <h3 class="sk-name">HTML5</h3>
+                <span class="sk-pct">95%</span>
               </div>
             </div>
+            <p class="sk-desc">Writing clean, semantic markup for accessible and SEO-friendly websites.</p>
+            <div class="sk-bar-wrap"><div class="sk-bar" style="--w:95%"></div></div>
           </div>
 
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-            <div class="skill-box premium-card">
-              <h3>CSS3</h3>
-              <p>Creating responsive layouts, animations, and modern UI designs.</p>
-              <span class="text-end d-block">90%</span>
-              <div class="skill-progress">
-                <div class="skill-progress-bar" role="progressbar"
-                  aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"
-                  style="--progress-width: 90%;"></div>
+          <!-- CSS3 -->
+          <div class="sk-card">
+            <div class="sk-card-top">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="sk-logo">
+              <div>
+                <h3 class="sk-name">CSS3</h3>
+                <span class="sk-pct">90%</span>
               </div>
             </div>
+            <p class="sk-desc">Creating responsive layouts, animations, and modern UI designs.</p>
+            <div class="sk-bar-wrap"><div class="sk-bar" style="--w:90%"></div></div>
           </div>
 
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-            <div class="skill-box premium-card">
-              <h3>JavaScript</h3>
-              <p>Building interactive features and dynamic web experiences.</p>
-              <span class="text-end d-block">85%</span>
-              <div class="skill-progress">
-                <div class="skill-progress-bar" role="progressbar"
-                  aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"
-                  style="--progress-width: 85%;"></div>
+          <!-- JavaScript -->
+          <div class="sk-card">
+            <div class="sk-card-top">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="sk-logo">
+              <div>
+                <h3 class="sk-name">JavaScript</h3>
+                <span class="sk-pct">85%</span>
               </div>
             </div>
+            <p class="sk-desc">Building interactive features and dynamic web experiences.</p>
+            <div class="sk-bar-wrap"><div class="sk-bar" style="--w:85%"></div></div>
           </div>
 
-          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-            <div class="skill-box premium-card">
-              <h3>React</h3>
-              <p>Building modern single-page applications with React framework.</p>
-              <span class="text-end d-block">80%</span>
-              <div class="skill-progress">
-                <div class="skill-progress-bar" role="progressbar"
-                  aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
-                  style="--progress-width: 80%;"></div>
+          <!-- React -->
+          <div class="sk-card">
+            <div class="sk-card-top">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="sk-logo">
+              <div>
+                <h3 class="sk-name">React</h3>
+                <span class="sk-pct">80%</span>
               </div>
             </div>
+            <p class="sk-desc">Building modern single-page applications with React framework.</p>
+            <div class="sk-bar-wrap"><div class="sk-bar" style="--w:80%"></div></div>
+          </div>
+
+          <!-- Bootstrap -->
+          <div class="sk-card">
+            <div class="sk-card-top">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" class="sk-logo">
+              <div>
+                <h3 class="sk-name">Bootstrap</h3>
+                <span class="sk-pct">88%</span>
+              </div>
+            </div>
+            <p class="sk-desc">Rapidly building responsive, mobile-first UI with Bootstrap components.</p>
+            <div class="sk-bar-wrap"><div class="sk-bar" style="--w:88%"></div></div>
+          </div>
+
+          <!-- Tailwind CSS -->
+          <div class="sk-card">
+            <div class="sk-card-top">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" class="sk-logo">
+              <div>
+                <h3 class="sk-name">Tailwind CSS</h3>
+                <span class="sk-pct">82%</span>
+              </div>
+            </div>
+            <p class="sk-desc">Utility-first CSS framework for fast, custom UI development.</p>
+            <div class="sk-bar-wrap"><div class="sk-bar" style="--w:82%"></div></div>
+          </div>
+
+          <!-- TypeScript -->
+          <div class="sk-card">
+            <div class="sk-card-top">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="sk-logo">
+              <div>
+                <h3 class="sk-name">TypeScript</h3>
+                <span class="sk-pct">75%</span>
+              </div>
+            </div>
+            <p class="sk-desc">Typed JavaScript for scalable, maintainable frontend codebases.</p>
+            <div class="sk-bar-wrap"><div class="sk-bar" style="--w:75%"></div></div>
+          </div>
+
+          <!-- Git -->
+          <div class="sk-card">
+            <div class="sk-card-top">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="sk-logo">
+              <div>
+                <h3 class="sk-name">Git</h3>
+                <span class="sk-pct">85%</span>
+              </div>
+            </div>
+            <p class="sk-desc">Version control and collaboration using Git and GitHub workflows.</p>
+            <div class="sk-bar-wrap"><div class="sk-bar" style="--w:85%"></div></div>
           </div>
 
         </div>
@@ -882,7 +1464,7 @@
 
     </section><!-- /Resume Section -->
 
-    <!-- Wavy Divider: Resume → Portfolio -->
+    <!-- Wavy Divider: Resume ? Portfolio -->
     <div class="wave-divider">
       <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
         <defs>
@@ -913,7 +1495,7 @@
       <div class="container">
 
         <div class="pf-title text-center">
-          <h2>Portfolio</h2>
+          <h2>Projects</h2>
           <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg"><path d="M 0,10 C 40,0 60,20 100,10 C 140,0 160,20 200,10" fill="none" stroke="#e07b39" stroke-width="2"></path></svg>
           <p>Modern frontend interfaces delivering exceptional user experiences through clean code and intuitive design.</p>
         </div>
@@ -1091,146 +1673,103 @@
         </div>
       </div>
     </section><!-- /Portfolio Section -->
-          <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
-            <path d="M 0,10 C 40,0 60,20 100,10 C 140,0 160,20 200,10" fill="none" stroke="currentColor" stroke-width="2"></path>
-          </svg>
-        </div>
-        <p class="services-desc-text">Modern web development combining technical excellence with user-focused design.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row align-items-center">
-          <div class="col-lg-4 mb-5 mb-lg-0">
-            <h2 class="fw-bold mb-4 servies-title">Modern Frontend Solutions</h2>
-            <p class="mb-4">
-        Building responsive interfaces with HTML5, CSS3, JavaScript, and modern frameworks for exceptional user experiences.
-         </p>
-            <a href="#" class="btn btn-outline-primary">See all services</a>
-          </div>
-          <div class="col-lg-8">
-            <div class="row g-4">
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-item">
-                  <i class="bi bi-activity icon"></i>
-                  <h3><a href="service-details.html">Frontend Development</a></h3>
-                  <p>Responsive interfaces using HTML5, CSS3, JavaScript, React, and Vue.js for seamless experiences across all devices.</p>
-                </div>
-              </div><!-- End Service Item -->
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="service-item">
-                  <i class="bi bi-easel icon"></i>
-                  <h3><a href="service-details.html">UI/UX Design</a></h3>
-                  <p>Intuitive interfaces with wireframes, prototypes, and designs that enhance user engagement.</p>
-                </div>
-              </div><!-- End Service Item -->
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
-                <div class="service-item">
-                  <i class="bi bi-broadcast icon"></i>
-                  <h3><a href="service-details.html">Responsive Web Design</a></h3>
-                  <p>Websites that work perfectly on all devices using CSS Grid, Flexbox, and modern responsive techniques.</p>
-                </div>
-              </div><!-- End Service Item -->
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
-                <div class="service-item">
-                  <i class="bi bi-bounding-box-circles icon"></i>
-                  <h3><a href="service-details.html">Performance Optimization</a></h3>
-                  <p>Optimized performance through code splitting, lazy loading, and modern build tools for fast loading.</p>
-                </div>
-              </div><!-- End Service Item -->
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </section><!-- /Services Section -->
 
     <!-- Faq Section -->
-    <section id="faq" class="faq section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Frequently Asked Questions</h2>
-        <div class="title-shape">
-          <svg viewBox="0 0 200 20" xmlns="http://www.w3.org/2000/svg">
-            <path d="M 0,10 C 40,0 60,20 100,10 C 140,0 160,20 200,10" fill="none" stroke="currentColor" stroke-width="2"></path>
-          </svg>
-        </div>
-        <p>Modern web development with clean code and exceptional user experiences.</p>
-      </div><!-- End Section Title -->
+    <section id="faq" class="faq-modern-section">
 
       <div class="container">
-
-        <div class="row justify-content-center">
-
-          <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="faq-container">
-
-              <div class="faq-item faq-active">
-                <h3>How do you ensure your websites are user-friendly and responsive?</h3>
-
-                <div class="faq-content">
-                  <p>I focus on building websites that are both visually appealing and highly functional. By using clean code, modern frameworks, and responsive design principles, I ensure every site works seamlessly across all devices and provides an excellent user experience.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>How do I build fullstack web applications efficiently?</h3>
-                <div class="faq-content">
-                  <p>I develop fullstack applications by integrating both frontend and backend technologies seamlessly. Using modern frameworks, clean code practices, and efficient database management, I ensure applications are scalable, fast, and provide an excellent user experience across all devices.</p>
-
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>How do I develop fullstack web applications?</h3>
-                <div class="faq-content">
-                  <p>I build fullstack applications by integrating frontend and backend technologies seamlessly. I focus on writing clean, maintainable code, implementing efficient databases, and ensuring responsive, user-friendly interfaces.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>What technologies do I use for web development?</h3>
-                <div class="faq-content">
-                  <p>I work with modern technologies such as HTML, CSS, JavaScript, React, Node.js, and SQL/NoSQL databases. These tools allow me to create scalable, high-performance applications tailored to client needs.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>How do I ensure website performance and security?</h3>
-                <div class="faq-content">
-                  <p>I implement best practices for website performance, including code optimization, caching strategies, and secure authentication. I also follow security protocols to protect user data and prevent vulnerabilities.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3><h3>How do I handle responsive design and user experience?</h3></h3>
-                <div class="faq-content">
-                  <p>I design websites to be fully responsive across all devices, prioritizing usability and accessibility. My goal is to provide smooth navigation, fast load times, and engaging interfaces for all users.</p>>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-            </div>
-
-          </div><!-- End Faq Column-->
-
+        <!-- Section Title -->
+        <div class="faq-modern-header" data-aos="fade-up">
+          <span class="faq-modern-tag">Got Questions?</span>
+          <h2 class="faq-modern-title">Frequently Asked <span class="faq-modern-accent">Questions</span></h2>
+          <p class="faq-modern-subtitle">Everything you need to know about my frontend development work and process.</p>
         </div>
 
-      </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-9" data-aos="fade-up" data-aos-delay="100">
+            <div class="faq-modern-list">
 
+              <div class="faq-modern-item active">
+                <div class="faq-modern-question">
+                  <span class="faq-modern-icon"><i class="bi bi-code-slash"></i></span>
+                  <h3>What frontend technologies do you specialise in?</h3>
+                  <span class="faq-modern-arrow"><i class="bi bi-chevron-down"></i></span>
+                </div>
+                <div class="faq-modern-answer">
+                  <p>I specialise in <strong>HTML5, CSS3, JavaScript (ES6+), React, Bootstrap, and Tailwind CSS</strong>. I also work with TypeScript, Git, and Figma to deliver clean, maintainable, and pixel-perfect interfaces.</p>
+                </div>
+              </div>
+
+              <div class="faq-modern-item">
+                <div class="faq-modern-question">
+                  <span class="faq-modern-icon"><i class="bi bi-phone"></i></span>
+                  <h3>How do you make websites fully responsive?</h3>
+                  <span class="faq-modern-arrow"><i class="bi bi-chevron-down"></i></span>
+                </div>
+                <div class="faq-modern-answer">
+                  <p>I use a <strong>mobile-first approach</strong> with CSS Flexbox, Grid, and responsive utility classes from Bootstrap or Tailwind. Every layout is tested across multiple screen sizes � mobile, tablet, and desktop � to ensure a seamless experience.</p>
+                </div>
+              </div>
+
+              <div class="faq-modern-item">
+                <div class="faq-modern-question">
+                  <span class="faq-modern-icon"><i class="bi bi-lightning-charge"></i></span>
+                  <h3>How do you optimise frontend performance?</h3>
+                  <span class="faq-modern-arrow"><i class="bi bi-chevron-down"></i></span>
+                </div>
+                <div class="faq-modern-answer">
+                  <p>I optimise performance by <strong>lazy loading images, minifying CSS/JS, reducing render-blocking resources, using efficient CSS animations</strong>, and following Core Web Vitals best practices to achieve fast load times and smooth interactions.</p>
+                </div>
+              </div>
+
+              <div class="faq-modern-item">
+                <div class="faq-modern-question">
+                  <span class="faq-modern-icon"><i class="bi bi-palette"></i></span>
+                  <h3>Do you work from Figma or design files?</h3>
+                  <span class="faq-modern-arrow"><i class="bi bi-chevron-down"></i></span>
+                </div>
+                <div class="faq-modern-answer">
+                  <p>Yes! I can translate <strong>Figma, Adobe XD, or any design mockup</strong> into a fully functional, pixel-perfect HTML/CSS/React interface. I pay close attention to spacing, typography, colours, and interactive states.</p>
+                </div>
+              </div>
+
+              <div class="faq-modern-item">
+                <div class="faq-modern-question">
+                  <span class="faq-modern-icon"><i class="bi bi-universal-access"></i></span>
+                  <h3>Do you follow accessibility (a11y) standards?</h3>
+                  <span class="faq-modern-arrow"><i class="bi bi-chevron-down"></i></span>
+                </div>
+                <div class="faq-modern-answer">
+                  <p>Absolutely. I follow <strong>WCAG 2.1 guidelines</strong> � using semantic HTML, proper ARIA labels, sufficient colour contrast, keyboard navigation support, and screen-reader-friendly markup to make interfaces accessible to everyone.</p>
+                </div>
+              </div>
+
+              <div class="faq-modern-item">
+                <div class="faq-modern-question">
+                  <span class="faq-modern-icon"><i class="bi bi-git"></i></span>
+                  <h3>How do you manage code and collaborate on projects?</h3>
+                  <span class="faq-modern-arrow"><i class="bi bi-chevron-down"></i></span>
+                </div>
+                <div class="faq-modern-answer">
+                  <p>I use <strong>Git and GitHub</strong> for version control, following branching strategies like Git Flow. I write clean, well-commented code and use component-based architecture in React to keep projects scalable and easy to maintain.</p>
+                </div>
+              </div>
+
+              <div class="faq-modern-item">
+                <div class="faq-modern-question">
+                  <span class="faq-modern-icon"><i class="bi bi-stars"></i></span>
+                  <h3>Can you build interactive UI components and animations?</h3>
+                  <span class="faq-modern-arrow"><i class="bi bi-chevron-down"></i></span>
+                </div>
+                <div class="faq-modern-answer">
+                  <p>Yes! I build <strong>custom interactive components</strong> � modals, sliders, tabs, accordions, animated counters, and smooth CSS/JS transitions. I use CSS keyframes, Intersection Observer, and React state to create engaging, performant animations.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
     </section><!-- /Faq Section -->
 
     <!-- Contact Section -->
@@ -1406,7 +1945,7 @@
 
       <!-- Copyright -->
       <div class="copyright text-center">
-        <p>© <span>2025</span> <strong class="px-1 sitename">MyFolio</strong> <span>All Rights Reserved</span></p>
+        <p>? <span>2025</span> <strong class="px-1 sitename">MyFolio</strong> <span>All Rights Reserved</span></p>
       </div>
 
       <!-- Credits -->
@@ -1416,6 +1955,17 @@
 
     </div>
   </footer>
+  <!-- ===== HERO MENU OVERLAY ===== -->
+  <div class="hero-menu-overlay" id="heroMenuOverlay">
+    <button class="hero-menu-close" id="heroMenuClose"><i class="bi bi-x-lg"></i></button>
+    <nav class="hero-menu-nav">
+      <a href="#about"    class="hero-menu-link" data-menu-link><span class="hero-menu-num">01</span>About</a>
+      <a href="#resume"   class="hero-menu-link" data-menu-link><span class="hero-menu-num">02</span>Resume</a>
+      <a href="#portfolio" class="hero-menu-link" data-menu-link><span class="hero-menu-num">03</span>Projects</a>
+      <a href="#faq"      class="hero-menu-link" data-menu-link><span class="hero-menu-num">04</span>FAQ</a>
+    </nav>
+  </div>
+
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <!-- Vendor JS Files -->
@@ -1479,7 +2029,7 @@
   })();
   </script>
 
-  <!-- Resume Particles — teal/emerald/cyan tones -->
+  <!-- Resume Particles ? teal/emerald/cyan tones -->
   <script>
   (function(){
     const canvas = document.getElementById('resumeParticles');
@@ -1507,7 +2057,7 @@
   })();
   </script>
 
-  <!-- Portfolio Particles — magenta/violet/gold tones -->
+  <!-- Portfolio Particles ? magenta/violet/gold tones -->
   <script>
   (function(){
     const canvas = document.getElementById('pfParticles');
@@ -1535,82 +2085,220 @@
   })();
   </script>
 
-  <!-- ===== HERO SLIDER ENGINE ===== -->
+  <!-- ===== HERO ROLE TYPING ANIMATION ===== -->
   <script>
-  (function() {
-    const SLIDE_DURATION = 3000; // 3 seconds
-    const slides   = document.querySelectorAll('.hs-slide');
-    const dots     = document.querySelectorAll('.hs-dot');
-    const bar      = document.getElementById('hsProgressBar');
-    let current    = 0;
-    let timer      = null;
-    let barTimer   = null;
+  (function () {
+    var roles   = ['Web Developer.', 'Frontend Developer.', 'UI/UX Enthusiast.', 'React Developer.'];
+    var colors  = ['#4a90d9', '#7ec8e3', '#a8d8ea', '#5ba8e8'];
+    var el      = document.getElementById('heroRoleTyped');
+    var underline = document.getElementById('heroRoleUnderline');
+    var roleIdx = 0;
+    var charIdx = 0;
+    var deleting = false;
+    var TYPE_SPEED   = 80;
+    var DELETE_SPEED = 40;
+    var PAUSE_END    = 1800;
+    var PAUSE_START  = 400;
 
-    function goTo(index) {
-      // exit current
-      slides[current].classList.remove('active');
-      slides[current].classList.add('exit');
-      dots[current].classList.remove('active');
-
-      setTimeout(() => {
-        slides[current].classList.remove('exit');
-        current = index;
-        slides[current].classList.add('active');
-        dots[current].classList.add('active');
-      }, 900);
-
-      current = index;
+    function wrapLetters(text, color) {
+      return text.split('').map(function(ch, i) {
+        var delay = (i * 0.08).toFixed(2);
+        return '<span class="letter" style="animation-delay:' + delay + 's;color:' + color + '">' +
+               (ch === ' ' ? '&nbsp;' : ch) + '</span>';
+      }).join('');
     }
 
-    function next() {
-      const nextIndex = (current + 1) % slides.length;
-      goTo(nextIndex);
-      resetBar();
-    }
+    function tick() {
+      var fullText = roles[roleIdx];
+      var color    = colors[roleIdx % colors.length];
+      var current  = fullText.slice(0, charIdx);
 
-    function resetBar() {
-      if (bar) {
-        bar.style.transition = 'none';
-        bar.style.width = '0%';
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            bar.style.transition = 'width ' + SLIDE_DURATION + 'ms linear';
-            bar.style.width = '100%';
-          });
-        });
+      el.innerHTML = wrapLetters(current, color);
+
+      // animate underline width proportionally
+      if (underline) {
+        underline.style.transition = 'width 0.08s linear';
+        underline.style.width = Math.round((charIdx / fullText.length) * 100) + '%';
+      }
+
+      if (!deleting) {
+        if (charIdx < fullText.length) {
+          charIdx++;
+          setTimeout(tick, TYPE_SPEED);
+        } else {
+          // pause then start deleting
+          setTimeout(function () { deleting = true; tick(); }, PAUSE_END);
+        }
+      } else {
+        if (charIdx > 0) {
+          charIdx--;
+          setTimeout(tick, DELETE_SPEED);
+        } else {
+          deleting = false;
+          roleIdx  = (roleIdx + 1) % roles.length;
+          setTimeout(tick, PAUSE_START);
+        }
       }
     }
 
-    function startAuto() {
-      timer = setInterval(next, SLIDE_DURATION);
-    }
-
-    function stopAuto() {
-      clearInterval(timer);
-    }
-
-    // Dot click
-    dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => {
-        stopAuto();
-        goTo(i);
-        resetBar();
-        startAuto();
-      });
-    });
-
-    // Pause on hover
-    const slider = document.getElementById('heroSlider');
-    if (slider) {
-      slider.addEventListener('mouseenter', stopAuto);
-      slider.addEventListener('mouseleave', () => { stopAuto(); startAuto(); });
-    }
-
-    // Kick off
-    resetBar();
-    startAuto();
+    // start after a short delay so page is painted
+    setTimeout(tick, 600);
   })();
   </script>
 
+  <!-- ===== HERO SLIDER ENGINE (disabled ? single slide only) ===== -->
+  <script>
+  // No slider rotation ? only one slide exists.
+  (function() {
+    const bar = document.getElementById('hsProgressBar');
+    if (bar) { bar.style.display = 'none'; }
+  })();
+  </script>
+
+
+  <!-- ===== SKILL BAR ANIMATION ===== -->
+  <script>
+  (function () {
+    function animateSkills() {
+      document.querySelectorAll('.sk-card').forEach(function(card, i) {
+        setTimeout(function() {
+          card.classList.add('in-view');
+        }, i * 60);
+      });
+    }
+
+    // Watch for about section becoming visible
+    var aboutEl = document.getElementById('about');
+    if (aboutEl) {
+      new MutationObserver(function(mutations) {
+        mutations.forEach(function(m) {
+          if (m.target.classList.contains('section-visible')) {
+            setTimeout(animateSkills, 300);
+          }
+        });
+      }).observe(aboutEl, { attributes: true, attributeFilter: ['class'] });
+    }
+
+    // Also trigger if already visible on load
+    if (aboutEl && aboutEl.classList.contains('section-visible')) {
+      setTimeout(animateSkills, 300);
+    }
+  })();
+  </script>
+
+  <!-- ===== HERO MENU BUTTON ===== -->
+  <script>
+  (function () {
+    var btn     = document.getElementById('heroMenuBtn');
+    var overlay = document.getElementById('heroMenuOverlay');
+    var close   = document.getElementById('heroMenuClose');
+    var links   = document.querySelectorAll('[data-menu-link]');
+    var hiddenSections = ['#about','#resume','#portfolio','#faq'];
+
+    function openMenu()  { overlay.classList.add('open');    document.body.style.overflow = 'hidden'; }
+    function closeMenu() { overlay.classList.remove('open'); document.body.style.overflow = ''; }
+
+    // Hide all menu-controlled sections on load
+    hiddenSections.forEach(function(sel) {
+      var el = document.querySelector(sel);
+      if (el) el.classList.remove('section-visible');
+    });
+
+    if (btn)   btn.addEventListener('click', openMenu);
+    if (close) close.addEventListener('click', closeMenu);
+
+    overlay && overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closeMenu();
+    });
+
+    links.forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        var href   = this.getAttribute('href');
+        var target = document.querySelector(href);
+        closeMenu();
+
+        if (target) {
+          // Hide all controlled sections first
+          hiddenSections.forEach(function(sel) {
+            var el = document.querySelector(sel);
+            if (el) el.classList.remove('section-visible');
+          });
+          // Show the clicked one
+          target.classList.add('section-visible');
+
+          // Scroll after overlay closes
+          setTimeout(function () {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 380);
+        }
+      });
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeMenu();
+    });
+  })();
+  </script>
+
+  <!-- ===== MODERN FAQ TOGGLE ===== -->
+  <script>
+  (function () {
+    document.querySelectorAll('.faq-modern-question').forEach(function (q) {
+      q.addEventListener('click', function () {
+        var item = this.closest('.faq-modern-item');
+        var isActive = item.classList.contains('active');
+        // close all
+        document.querySelectorAll('.faq-modern-item').forEach(function (i) {
+          i.classList.remove('active');
+        });
+        // open clicked if it wasn't open
+        if (!isActive) item.classList.add('active');
+      });
+    });
+  })();
+  </script>
+
+  <!-- ===== SKILLS SEAMLESS MARQUEE ===== -->
+  <script>
+  (function () {
+    var track = document.getElementById('skillsTrack');
+    if (!track) return;
+
+    // Clone original items 4 times so track always overflows any screen
+    var origItems = Array.from(track.children);
+    for (var c = 0; c < 4; c++) {
+      origItems.forEach(function(item) {
+        track.appendChild(item.cloneNode(true));
+      });
+    }
+
+    var speed  = 1.5;
+    var pos    = 0;
+    var paused = false;
+    var setW   = 0;
+
+    function calcSetWidth() {
+      var item = track.children[0];
+      if (!item) return;
+      setW = origItems.length * (item.offsetWidth + 70);
+    }
+
+    track.parentElement.addEventListener('mouseenter', function () { paused = true; });
+    track.parentElement.addEventListener('mouseleave', function () { paused = false; });
+
+    function tick() {
+      if (!paused) {
+        pos -= speed;
+        if (Math.abs(pos) >= setW) pos = 0;
+        track.style.transform = 'translateX(' + pos + 'px)';
+      }
+      requestAnimationFrame(tick);
+    }
+
+    window.addEventListener('load', function () { calcSetWidth(); tick(); });
+    setTimeout(calcSetWidth, 800);
+  })();
+  </script>
 </body>
 </html>
