@@ -1,4 +1,4 @@
-﻿/**
+/**
 * Template Name: EasyFolio
 * Template URL: https://bootstrapmade.com/easyfolio-bootstrap-portfolio-template/
 * Updated: Feb 21 2025 with Bootstrap v5.3.3
@@ -3088,10 +3088,10 @@ body.dark-mode .about-float-card strong { color: #f1f5f9; }
 ==============================================================*/
 
 /* ── Shared section background patterns ── */
-#resume    { background: linear-gradient(160deg, #f0f4ff 0%, #fafafa 50%, #fff5f0 100%); position: relative; overflow: hidden; }
+#resume    { background: radial-gradient(ellipse at 60% 50%, #1a3a5c 0%, #0d2240 30%, #071628 60%, #050f1e 100%); position: relative; overflow: hidden; }
 #services  { background: linear-gradient(135deg, #0f0c29 0%, #1a1040 60%, #0d1a2e 100%); position: relative; overflow: hidden; }
-#faq       { background: linear-gradient(160deg, #f8f4ff 0%, #fff 50%, #f0fff8 100%); position: relative; overflow: hidden; }
-#contact   { background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d1117 100%); position: relative; overflow: hidden; }
+#faq       { background: radial-gradient(ellipse at 60% 50%, #1a3a5c 0%, #0d2240 30%, #071628 60%, #050f1e 100%); position: relative; overflow: hidden; }
+#contact   { background: radial-gradient(ellipse at 60% 50%, #1a3a5c 0%, #0d2240 30%, #071628 60%, #050f1e 100%); position: relative; overflow: hidden; }
 
 /* Shared floating blob decoration */
 #resume::before, #faq::before {

@@ -2,22 +2,7 @@
  * Premium Portfolio Features — Zero Delay, Instant Load
  */
 
-// ── Dark/Light Mode Toggle ──────────────────────────────
-const themeToggle = document.getElementById('themeToggle');
-const themeIcon   = themeToggle?.querySelector('i');
-
-const savedTheme = localStorage.getItem('theme') || 'light';
-if (savedTheme === 'dark') {
-  document.body.classList.add('dark-mode');
-  if (themeIcon) themeIcon.className = 'bi bi-sun-fill';
-}
-
-themeToggle?.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  const isDark = document.body.classList.contains('dark-mode');
-  if (themeIcon) themeIcon.className = isDark ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
-  localStorage.setItem('theme', isDark ? 'dark' : 'light');
-});
+// Theme toggle removed
 
 // ── Scroll to Top — handled by main.js scroll-top element ──
 
